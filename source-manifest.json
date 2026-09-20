@@ -1,0 +1,28 @@
+{
+  "imported": "2026-09-20",
+  "workspaceBaseline": "f98af3a43f5cd418d8dc1d457007f2d4a68afbad",
+  "includesWorkingTreeEdits": true,
+  "files": [
+    {
+      "path": "Duality mode documentation/FUSE-RailForge-Complete-Translation-Matrix.md",
+      "origin": "modding-workspace",
+      "source": "Duality mode documentation/FUSE-RailForge-Complete-Translation-Matrix.md",
+      "sha256": "cd8ba88a10f441f1e8fb4115ad549bb74f7cd1fb56d02e888086c3d8568bf6c0",
+      "bytes": 129816
+    },
+    {
+      "path": "Duality mode documentation/FUSE-RailForge-Dual-Runtime-How-To.md",
+      "origin": "modding-workspace",
+      "source": "Duality mode documentation/FUSE-RailForge-Dual-Runtime-How-To.md",
+      "sha256": "d521805273a6c7873632dfa35f4afb8f612e5e6d3233c30914fa43d2121d54a1",
+      "bytes": 38903
+    },
+    {
+      "path": "Duality mode documentation/FUSE-RailForge-Dual-Runtime-Quickstart.md",
+      "origin": "modding-workspace",
+      "source": "Duality mode documentation/FUSE-RailForge-Dual-Runtime-Quickstart.md",
+      "sha256": "3fc9ca918c46ff479af66d45bad2bef370423682208513d7281d7c6a41d1ee69",
+      "bytes": 8143
+    }
+  ]
+}

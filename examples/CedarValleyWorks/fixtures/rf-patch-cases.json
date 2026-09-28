@@ -1,0 +1,344 @@
+{
+  "base": {
+    "rows": [
+      {
+        "id": "a",
+        "value": 1
+      },
+      {
+        "id": "b",
+        "value": 2
+      }
+    ],
+    "keep": true
+  },
+  "cases": [
+    {
+      "name": "plain-array-replaces",
+      "patch": {
+        "rows": [
+          {
+            "id": "c",
+            "value": 3
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "replace",
+      "patch": {
+        "rows": [
+          {
+            "$replace": [
+              {
+                "id": "c",
+                "value": 3
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "remove-array",
+      "patch": {
+        "rows": [
+          {
+            "$remove": true
+          }
+        ]
+      },
+      "expected": {
+        "rows": [],
+        "keep": true
+      }
+    },
+    {
+      "name": "add",
+      "patch": {
+        "rows": [
+          {
+            "$add": {
+              "id": "c",
+              "value": 3
+            }
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 1
+          },
+          {
+            "id": "b",
+            "value": 2
+          },
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "append",
+      "patch": {
+        "rows": [
+          {
+            "$append": [
+              {
+                "id": "c",
+                "value": 3
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 1
+          },
+          {
+            "id": "b",
+            "value": 2
+          },
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "find-patch",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "b",
+              "comp": "Equals"
+            },
+            "value": 9
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 1
+          },
+          {
+            "id": "b",
+            "value": 9
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "optional-miss",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "missing"
+            },
+            "$optional": true
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 1
+          },
+          {
+            "id": "b",
+            "value": 2
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "find-remove",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "a"
+            },
+            "$remove": true
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "b",
+            "value": 2
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "clone",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "a"
+            },
+            "$clone": true,
+            "id": "c",
+            "value": 3
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 1
+          },
+          {
+            "id": "b",
+            "value": 2
+          },
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "move",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "b"
+            },
+            "$moveTo": 0
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "b",
+            "value": 2
+          },
+          {
+            "id": "a",
+            "value": 1
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "find-fallback",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "c"
+            },
+            "$add": {
+              "id": "c",
+              "value": 3
+            }
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 1
+          },
+          {
+            "id": "b",
+            "value": 2
+          },
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    },
+    {
+      "name": "mixed-program",
+      "patch": {
+        "rows": [
+          {
+            "$find": {
+              "path": "id",
+              "value": "a"
+            },
+            "value": 9
+          },
+          {
+            "id": "c",
+            "value": 3
+          }
+        ]
+      },
+      "expected": {
+        "rows": [
+          {
+            "id": "a",
+            "value": 9
+          },
+          {
+            "id": "b",
+            "value": 2
+          },
+          {
+            "id": "c",
+            "value": 3
+          }
+        ],
+        "keep": true
+      }
+    }
+  ]
+}

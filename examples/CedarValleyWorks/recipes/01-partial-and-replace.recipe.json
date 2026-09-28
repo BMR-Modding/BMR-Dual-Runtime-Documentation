@@ -1,0 +1,61 @@
+{
+  "title": "Patch a component; append versus replace spans",
+  "status": "paired",
+  "prerequisites": [
+    "Apply after the core graph; these are alternatives, not all steps of one upgrade."
+  ],
+  "notes": [
+    "FUSE partial trackSpanIds appends distinct IDs; [] there does not clear. Use trackSpanPatch.replace: [] to clear.",
+    "RF ordinary trackSpans arrays replace. The RF append shown here is not a uniqueness guarantee.",
+    "For whole component replacement, FUSE replaceComponents: true corresponds to RF components: {\"$replace\": {complete component dictionary}}.",
+    "FUSE segment preservation flags become omission of supported RF fields. Do not emit zero/default values when preserving."
+  ],
+  "fuseFragment": {
+    "operations": {
+      "industries": {
+        "cvw-works": {
+          "name": "Cedar Valley Crate Works",
+          "areaId": "cvw-area",
+          "position": {
+            "x": 5.98807,
+            "y": 0,
+            "z": -35.554789
+          },
+          "components": {
+            "receive": {
+              "partial": true,
+              "maxStorage": 160000,
+              "trackSpanPatch": {
+                "append": [
+                  "cvw-p-team"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "areas": {
+      "cvw-area": {
+        "industries": {
+          "cvw-works": {
+            "components": {
+              "receive": {
+                "maxStorage": 160000,
+                "trackSpans": [
+                  {
+                    "$append": [
+                      "cvw-p-team"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

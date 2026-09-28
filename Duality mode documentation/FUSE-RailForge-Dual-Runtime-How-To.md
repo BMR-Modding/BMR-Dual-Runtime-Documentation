@@ -1,14 +1,16 @@
 # One Package, Two Runtimes
 
-## How to translate a legacy data mod and ship it for both FUSE and RailForge
+## Data conversion reference for FUSE and RailForge
 
-> **Status:** Community-tested compatibility pattern, not an official promise from either loader. The proof of concept was verified on 4 September 2026 with FUSE development build `0.0.0+1eeef152ec57066bb7a90e1ef6edb27f6018e690` and RailForge `1.98.BRAVO99` (`0.12.99.0`). Re-test after updating Railroader, FUSE, RailForge, or a required asset pack.
+Updated 20 September 2026. [Guide index](../README.md) · [All source workflows](./Conversion-Workflows.md) · [Code mods](./Code-Mods-and-Optional-Adapters.md)
+
+> **Evidence scope:** The original proof of concept was verified on 4 September 2026 with FUSE development build `0.0.0+1eeef152ec57066bb7a90e1ef6edb27f6018e690` and RailForge `1.98.BRAVO99` (`0.12.99.0`). This edition adds later focused findings, including DELTA07/DELTA25 cases. It does not claim that every historical mapping was re-tested on those builds. See [Evidence and compatibility](./Evidence-and-Compatibility.md). Re-test affected contracts after changing the game, runtime, or providers.
 
 > **New to the setup?** Start with the [simple folder-and-manifest quickstart](./FUSE-RailForge-Dual-Runtime-Quickstart.md). This document is the detailed conversion, troubleshooting, and validation reference. Use the [complete Legacy → FUSE ↔ RailForge translation matrix](./FUSE-RailForge-Complete-Translation-Matrix.md) when you need legacy source roots, every supplied native namespace, arrays, fields, component types, compatibility paths, and unsupported cases aligned side by side.
 
 This guide shows how to translate an existing legacy data mod, when applicable, and distribute one mod folder that works when the player chooses **either FUSE or RailForge**. The two loaders do not consume the same native graph dialect. The trick is to keep one FUSE graph and one RailForge graph in loader-specific locations inside the same package, while treating RailLoader/Strange Customs-family content as source or an explicitly selected compatibility path rather than a third duplicate graph.
 
-The recommended authoring workflow is:
+The FUSE-first authoring workflow is shown below. If RailForge or legacy is your maintained source, use the [corresponding workflow](./Conversion-Workflows.md); do not unnecessarily replace a working canonical source.
 
 1. If the source is legacy, inventory its manifests, data roots, mixintos, handlers, assets, and binaries.
 2. Convert or rebuild the supported data in FUSE and finish that native version.
@@ -22,9 +24,9 @@ The result is **one installation package with two native graph branches**, not o
 
 ## Scope and limits
 
-This method is intended for data-only graph/content mods: track, spans, areas, industries, scenery, removals, progression, and compatible handler-backed data.
+This reference covers the data branch: tracks, spans, areas, industries, scenery, removals, progression, and compatible handler-backed data. The same package layout can accompany a shared UMM DLL or a verified optional adapter, as implemented in later BMR projects.
 
-It does **not** automatically make compiled DLL mods dual-runtime. Code mods may depend on loader APIs, assemblies, patch points, and licences. Those need a separate engineering and distribution plan.
+Data conversion does **not** automatically port compiled behavior. Inspect assembly scope, initialization ownership, settings, patch points, and lifecycle using the [code-mod guide](./Code-Mods-and-Optional-Adapters.md).
 
 Important boundaries:
 
@@ -103,13 +105,19 @@ List every intended FUSE definition explicitly in `FuseDataFiles`, in load order
 The unusual but important dual-runtime detail is this:
 
 ```json
-"Requirements": [],
-"LoadAfter": ["FUSE"]
+{
+  "Requirements": [],
+  "LoadAfter": ["FUSE"]
+}
 ```
 
 A normal FUSE-only package may use a hard generic `Requirements: ["FUSE"]`. In the tested dual package, RailForge also audited that generic requirement and reported missing FUSE in the RF-only environment. Explicit `FuseDataFiles` allowed FUSE to discover and load the package. Keeping FUSE only as an optional `LoadAfter` target preserved UMM ordering when present without creating a hard cross-runtime dependency.
 
-Use `FuseRequires`, `FuseLoadAfter`, and `FuseLoadBefore` for real relationships between FUSE data packages. Do not use ordering as a substitute for a required dependency. Any generic UMM dependency placed in `Requirements` must also make sense in the RF-only installation, or it can defeat the dual-runtime design.
+Use `FuseRequires` for real FUSE-side providers. Native data order fields have narrower target rules: the TRD tests found asset-only providers accepted as requirements but rejected in `FuseLoadAfter`. Keep those assets out of native data-order lists; use actual data-package targets such as a load dictionary. Recognized runtime replacement capabilities and legacy advisory ordering have separate handling.
+
+The inspected native FUSE requirement path checks IDs; declaring `NotBefore` alone does not establish automatic minimum-version enforcement. Validate provider versions separately. See [Dependencies and discovery](./Dependencies-and-Discovery.md).
+
+Do not use ordering as a substitute for a requirement. Generic UMM `Requirements` must also make sense in the RF-only installation.
 
 ### `Definition.json` for RailForge discovery
 
@@ -165,10 +173,12 @@ Conditions must retain **fragment scope**. A missing requirement or matching con
 FUSE lists the optional fragment in `Info.json`:
 
 ```json
-"FuseDataFiles": [
-  "example-yard.fuse.json",
-  "optional-yard.fuse.json"
-]
+{
+  "FuseDataFiles": [
+    "example-yard.fuse.json",
+    "optional-yard.fuse.json"
+  ]
+}
 ```
 
 The optional FUSE fragment carries its own metadata:
@@ -231,7 +241,7 @@ Before conversion, keep an untouched source copy outside the release folder and 
 
 Mark each item `converted`, `RF legacy-direct`, `preserved-only`, `provider/code`, or `unsupported`. This prevents a successful track conversion from hiding a missing script behavior.
 
-### 1. Finish the FUSE version first
+### 1. Finish the FUSE version first (FUSE-first workflow)
 
 Build the complete mod in native FUSE format. Test its tracks, operations, scenery, progression, and save behavior before translating anything.
 
@@ -240,7 +250,7 @@ When it is accepted:
 - make a protected working copy;
 - record the SHA-256 hash of the FUSE graph;
 - treat the FUSE file as the semantic source of truth;
-- never patch the FUSE branch merely to satisfy an RF-specific problem.
+- keep RF-specific workarounds in the RF branch; correct shared design errors in both branches.
 
 For example:
 
@@ -268,9 +278,11 @@ Use a different runtime-specific ID only when there is a proven semantic or life
 
 ## Legacy/FUSE-to-RailForge conversion reference
 
+JSON snippets below are valid JSON objects. Where a snippet shows only one record or a few fields, insert it at the stated graph/manifest scope; it is not a complete installable mod.
+
 This is a conversion guide, not a blind search-and-replace recipe. RailForge is a merge/patch format, while FUSE describes authored intent and also supports conveniences and aliases.
 
-The tables below cover the most common conversion work. The separate [complete translation matrix](./FUSE-RailForge-Complete-Translation-Matrix.md) is the exhaustive Legacy → FUSE ↔ RailForge ledger and should be the authority when a source root, compatibility handler, namespace, or array is not shown here.
+The tables below cover the most common conversion work. The separate [complete translation matrix](./FUSE-RailForge-Complete-Translation-Matrix.md) is the detailed Legacy → FUSE ↔ RailForge ledger for the recorded source/runtime baseline. Check its evidence scope and later correction notes when a root, handler, namespace, or array is not shown here.
 
 ### Top-level structure
 
@@ -313,26 +325,30 @@ FUSE-only or less common fields such as `isDiamond`, `gauge`, `tags`, partial/pr
 FUSE example:
 
 ```json
-"S_example_01": {
-  "style": "yard",
-  "trackClass": "industrial",
-  "startNodeId": "N_example_A",
-  "endNodeId": "N_example_B",
-  "priority": 0,
-  "speedLimit": 0
+{
+  "S_example_01": {
+    "style": "yard",
+    "trackClass": "industrial",
+    "startNodeId": "N_example_A",
+    "endNodeId": "N_example_B",
+    "priority": 0,
+    "speedLimit": 0
+  }
 }
 ```
 
 RailForge equivalent:
 
 ```json
-"S_example_01": {
-  "style": "Yard",
-  "trackClass": "Industrial",
-  "startId": "N_example_A",
-  "endId": "N_example_B",
-  "priority": 0,
-  "speedLimit": 0
+{
+  "S_example_01": {
+    "style": "Yard",
+    "trackClass": "Industrial",
+    "startId": "N_example_A",
+    "endId": "N_example_B",
+    "priority": 0,
+    "speedLimit": 0
+  }
 }
 ```
 
@@ -349,16 +365,18 @@ RailForge equivalent:
 FUSE example:
 
 ```json
-"example_service": {
-  "upper": {
-    "segmentId": "S_example_01",
-    "distance": 0.0,
-    "end": "Start"
-  },
-  "lower": {
-    "segmentId": "S_example_01",
-    "distance": 0.0,
-    "end": "End"
+{
+  "example_service": {
+    "upper": {
+      "segmentId": "S_example_01",
+      "distance": 0.0,
+      "end": "Start"
+    },
+    "lower": {
+      "segmentId": "S_example_01",
+      "distance": 0.0,
+      "end": "End"
+    }
   }
 }
 ```
@@ -366,18 +384,20 @@ FUSE example:
 RailForge equivalent:
 
 ```json
-"example_service": {
-  "upper": {
-    "segmentId": "S_example_01",
-    "distance": 0.0,
-    "end": "A"
-  },
-  "lower": {
-    "segmentId": "S_example_01",
-    "distance": 0.0,
-    "end": "B"
-  },
-  "normalize": true
+{
+  "example_service": {
+    "upper": {
+      "segmentId": "S_example_01",
+      "distance": 0.0,
+      "end": "A"
+    },
+    "lower": {
+      "segmentId": "S_example_01",
+      "distance": 0.0,
+      "end": "B"
+    },
+    "normalize": true
+  }
 }
 ```
 
@@ -399,21 +419,26 @@ FUSE industries are stored centrally and identify their area. RF industries are 
 
 When replacing an existing vanilla industry that has no `areaId` in the FUSE patch, find its actual area in the RF baseline/viewer. RF does not infer area membership from display name or physical proximity.
 
+**Coordinate correction:** this is not always just `position` → `localPosition`. TRD inspection found both runtimes assigning industry positions locally under their parent area; FUSE's `coordinateSpace` marker did not override that field. If the source contains world coordinates, convert using the verified parent transform. For the unrotated/unscaled Ela case, subtracting its world origin was correct. Do not apply that subtraction to tracks or scenery indiscriminately. See [Assets and coordinates](./Assets-and-Coordinates.md).
+
 Minimal FUSE component example inside `operations.industries`:
 
 ```json
-"example-engine": {
-  "name": "Example Engine Service",
-  "position": { "x": 10.0, "y": 0.0, "z": -20.0 },
-  "usesContract": false,
-  "replaceComponents": true,
-  "components": {
-    "coal": {
-      "type": "unloader",
-      "name": "Coal Track",
-      "trackSpanIds": ["example_service"],
-      "loadId": "coal",
-      "carTypeFilter": "HM,HT"
+{
+  "example-engine": {
+    "name": "Example Engine Service",
+    "areaId": "example",
+    "position": { "x": 10.0, "y": 0.0, "z": -20.0 },
+    "usesContract": false,
+    "replaceComponents": true,
+    "components": {
+      "coal": {
+        "type": "unloader",
+        "name": "Coal Track",
+        "trackSpanIds": ["example_service"],
+        "loadId": "coal",
+        "carTypeFilter": "HM,HT"
+      }
     }
   }
 }
@@ -422,18 +447,20 @@ Minimal FUSE component example inside `operations.industries`:
 RailForge equivalent inside `areas.example.industries`:
 
 ```json
-"example-engine": {
-  "name": "Example Engine Service",
-  "localPosition": { "x": 10.0, "y": 0.0, "z": -20.0 },
-  "usesContract": false,
-  "components": {
-    "$replace": {
-      "coal": {
-        "type": "Model.Ops.IndustryUnloader",
-        "name": "Coal Track",
-        "trackSpans": ["example_service"],
-        "loadId": "coal",
-        "carTypeFilter": "HM,HT"
+{
+  "example-engine": {
+    "name": "Example Engine Service",
+    "localPosition": { "x": 10.0, "y": 0.0, "z": -20.0 },
+    "usesContract": false,
+    "components": {
+      "$replace": {
+        "coal": {
+          "type": "Model.Ops.IndustryUnloader",
+          "name": "Coal Track",
+          "trackSpans": ["example_service"],
+          "loadId": "coal",
+          "carTypeFilter": "HM,HT"
+        }
       }
     }
   }
@@ -563,6 +590,14 @@ FUSE `groupIds` shorthand may need expansion into both `trackGroupsEnableOnUnloc
 
 RF can materialize progression definitions without enforcing their visibility. If the mod relies on RF-managed hide/show behavior, verify the current RF progression-materializer and initial-visibility settings. Test Sandbox and Company separately; `defaultEnableInSandbox` is not a Company-start mechanism.
 
+### Later progression findings
+
+TRD's FUSE path inferred the service industry's expansion gate from its spans; the inspected RF path required an explicit industry include. Translate the intended gate, not only the visible group list.
+
+Whittier also exposed late saved-feature replay re-enabling a completed construction component. Removing that component from a permanent feature's ownership required an explicit empty `unlockIncludeIndustryComponents` array; omission retained the old claim on an existing feature. Let the delivery phase control its temporary component. Test locked, active, completed, delayed-load, and saved-completed states.
+
+See [Progression and save lifecycle](./Progression-and-Save-Lifecycle.md) for the worked cases and map-unload billing guard.
+
 ## Runtime-specific differences: use an allowlist
 
 Most IDs and semantics should match. Put necessary differences in a small table stored with the project, for example:
@@ -585,7 +620,9 @@ Ten segments were present in the merged RF graph but absent from the rendered tr
 The intended RF behavior was “these tracks always exist,” so only the RF branch explicitly used:
 
 ```json
-"groupId": ""
+{
+  "groupId": ""
+}
 ```
 
 The FUSE branch kept `groupId: "EWH"`. Normally, preserve the group and translate its progression. Clear it only when always-enabled track is the intended RF behavior.
@@ -605,6 +642,8 @@ The custom repair spans had the same physical geometry as two vanilla spans. The
 The engine-shed Mandela path and telegraph-pole indexes used by East Whittier belong only to that map state. Every author must obtain exact paths and IDs for their own target and version.
 
 ## Test the two runtimes independently
+
+Use the [testing and release workflow](./Testing-and-Release.md) and [test report template](../templates/TEST-REPORT.md) to distinguish schema checks, real runtime methods, live startup, gameplay, and save migration. The checklist below retains the original data-mod procedure.
 
 A successful menu load is not proof. Each runtime must independently prove that it discovered the right file, ignored the other branch, built the complete graph, resolved operations, applied progression, and survived a save/reload cycle.
 
@@ -741,6 +780,11 @@ The same package ID does not guarantee save portability. Saves can retain rollin
 | --- | --- | --- |
 | RF reports missing FUSE with `RF-DEP-001` | `Info.json` declares FUSE as a hard generic requirement | Use the tested data-only dual pattern: no hard generic FUSE requirement, explicit `FuseDataFiles`, and optional `LoadAfter: ["FUSE"]`. |
 | RF graph is ignored | Wrong folder, bad manifest, duplicate ID, or dependency block | Check `RailForge/game-graph/**/*.json`, the support report, package ID, and indexed file count. |
+| FUSE rejects an installed asset provider as a load-order target | Native `FuseLoadAfter` expects an eligible data package, not an arbitrary asset-only mod | Keep the real asset requirement; remove the invalid data-order edge and test admission. |
+| Correct RF asset pack is mounted but the wrong material is selected | Mounted store URI was compared with catalog identity | Check `store.Catalog().identifier` and exact definition/asset/cargo binding; test actual mounted identifiers. |
+| Industry marker is displaced by an area offset | World coordinates assigned as parent-local industry coordinates | Verify the parent transform and correct that field in both branches. |
+| Completed construction site returns after reload | A permanent feature still owns the phase component | Clear the obsolete include claim explicitly and retest late replay. |
+| Shared code charges on menu return | Removal callback also runs during map teardown | Separate teardown from billable gameplay departure using the verified lifecycle state. |
 | FUSE loads the wrong graph | Fallback discovery or an unwanted root backup | Pin `FuseDataFiles`; remove release backups ending in `.fuse.json`; verify the logged path. |
 | Conditional RF content always loads | Its JSON is beneath `RailForge/game-graph`, so native discovery bypasses the condition | Move it to a non-auto-discovered path such as `RailForge/conditional` and reference it once from the conditional mixinto. |
 | Nodes, rails, industries, or scenery appear twice | Equivalent legacy and native payloads are both active | Choose one active path per runtime; remove the duplicate legacy mixinto/root or its native replacement from that test/release design. |
@@ -796,6 +840,6 @@ It did not establish automatic compatibility for every FUSE feature, legacy pack
 
 ## The maintenance rule
 
-**Import legacy once; author in FUSE; translate deliberately to RailForge; verify every active path.**
+**Maintain one authoritative source; translate deliberately into each runtime's supported contracts; verify every active path.**
 
 That keeps one creative source of truth, one distributable folder, and two honest native implementations. The folder trick provides isolation. The quality comes from preserving semantics, documenting exceptions, and testing the real runtime objects instead of trusting JSON alone.

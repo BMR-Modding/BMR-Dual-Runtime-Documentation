@@ -1,0 +1,17 @@
+{
+  "Id": "ExampleAuthor.DualCargo",
+  "DisplayName": "Dual Runtime Cargo Example",
+  "Author": "Example Author",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.27.10",
+  "Requirements": [],
+  "LoadAfter": [
+    "FUSE",
+    "RTM.RailForge"
+  ],
+  "FuseRequires": [],
+  "FuseLoadAfter": [],
+  "FuseDataFiles": [
+    "cargo.fuse.json"
+  ]
+}

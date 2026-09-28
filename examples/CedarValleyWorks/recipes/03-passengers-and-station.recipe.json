@@ -1,0 +1,114 @@
+{
+  "title": "Passenger component plus physical station",
+  "status": "requires-topology",
+  "prerequisites": [
+    "Replace neighbor and branch IDs with an authored timetable network; choose final area order."
+  ],
+  "notes": [
+    "A station prefab alone does not create passenger service. The prefab must contain exactly one StationAgent.",
+    "This alternative shares the team-track span only for teaching. Build a suitable passenger siding for actual service.",
+    "RF branch intermediates are not established as fully supported. Main occurrence plus at most one junction duplicate is the inspected boundary."
+  ],
+  "fuseFragment": {
+    "operations": {
+      "industries": {
+        "cvw-works": {
+          "name": "Cedar Valley Crate Works",
+          "areaId": "cvw-area",
+          "position": {
+            "x": 5.98807,
+            "y": 0,
+            "z": -35.554789
+          },
+          "components": {
+            "passengers": {
+              "type": "passengerStop",
+              "name": "Cedar Valley Passenger Stop",
+              "trackSpanIds": [
+                "cvw-p-team"
+              ],
+              "passengerStopId": "cvw-passenger-stop",
+              "timetableCode": "CVW",
+              "basePopulation": 250,
+              "neighborIds": [
+                "REPLACE-WITH-EXISTING-STOP-ID"
+              ],
+              "branch": "REPLACE-WITH-EXISTING-BRANCH",
+              "branchDefinitions": [
+                {
+                  "branch": "REPLACE-WITH-EXISTING-BRANCH",
+                  "traverseTimeToNext": 10
+                }
+              ]
+            }
+          }
+        }
+      },
+      "stations": {
+        "cvw-station": {
+          "position": {
+            "x": -31008.124719,
+            "y": 527.52,
+            "z": -20429.954371
+          },
+          "rotation": {
+            "x": 0,
+            "y": 226.75,
+            "z": 0
+          },
+          "prefab": "vanilla://flagStopStation",
+          "passengerStopId": "cvw-passenger-stop"
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "areas": {
+      "cvw-area": {
+        "industries": {
+          "cvw-works": {
+            "components": {
+              "passengers": {
+                "type": "RailForge.PassengerStation",
+                "name": "Cedar Valley Passenger Stop",
+                "passengerStopId": "cvw-passenger-stop",
+                "timetableCode": "CVW",
+                "basePopulation": 250,
+                "neighborIds": [
+                  "REPLACE-WITH-EXISTING-STOP-ID"
+                ],
+                "branch": "REPLACE-WITH-EXISTING-BRANCH",
+                "trackSpans": [
+                  "cvw-p-team"
+                ],
+                "branches": [
+                  {
+                    "branch": "REPLACE-WITH-EXISTING-BRANCH",
+                    "traverseTimeToNext": 10
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "splineys": {
+      "cvw-station": {
+        "position": {
+          "x": -31008.124719,
+          "y": 527.52,
+          "z": -20429.954371
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "prefab": "vanilla://flagStopStation",
+        "passengerStop": "cvw-passenger-stop",
+        "handler": "AlinasMapMod.Stations.StationAgentBuilder"
+      }
+    }
+  }
+}

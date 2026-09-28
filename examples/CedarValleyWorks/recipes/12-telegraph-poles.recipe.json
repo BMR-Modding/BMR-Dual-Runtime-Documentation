@@ -1,0 +1,93 @@
+{
+  "title": "Pole line, individual pole, and indexed movement",
+  "status": "manual-expansion",
+  "prerequisites": [
+    "Replace pole indices 10001/10002 with inspected existing IDs; they are teaching placeholders, not allocated IDs."
+  ],
+  "notes": [
+    "One RF pole is only an illustration, not a complete translation of the FUSE line. Expand positions, wire connections and identity explicitly.",
+    "Pole edit parallel arrays require exact matching lengths. Created IDs must be positive unique and unused; v2 requires tags, v3 scales, v4 permits deletions."
+  ],
+  "fuseFragment": {
+    "world": {
+      "telegraphPoles": {
+        "cvw-pole-line": {
+          "spacing": 30,
+          "points": [
+            {
+              "x": -30942.974088,
+              "y": 527.52,
+              "z": -20265.69727
+            },
+            {
+              "x": -31074.080863,
+              "y": 527.52,
+              "z": -20389.030208
+            }
+          ]
+        }
+      },
+      "telegraphPoleMovements": [
+        {
+          "poleIndices": [
+            10001,
+            10002
+          ],
+          "offset": {
+            "x": -0.0,
+            "y": 2,
+            "z": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "railforgeFragment": {
+    "splineys": {
+      "cvw-pole-01": {
+        "handler": "RailForge.MapEditor.TelegraphPoles.TelegraphPoleBuilder",
+        "position": {
+          "x": -30942.974088,
+          "y": 527.52,
+          "z": -20265.69727
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "variant": "Standard Wood Pole",
+        "height": 5.5,
+        "crossarmWidth": 1.8,
+        "wireCount": 4,
+        "poleRadius": 0.09
+      },
+      "cvw-pole-move": {
+        "handler": "RailForge.MapEditor.TelegraphPoleEdits",
+        "schemaVersion": 4,
+        "createOnly": false,
+        "polesToMove": [
+          10001,
+          10002
+        ],
+        "poleMovement": [
+          {
+            "x": -0.0,
+            "y": 2,
+            "z": 0.0
+          },
+          {
+            "x": -0.0,
+            "y": 2,
+            "z": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

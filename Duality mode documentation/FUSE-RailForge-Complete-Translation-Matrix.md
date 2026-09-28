@@ -2,7 +2,9 @@
 
 ## Data-only Railroader graph mods
 
-> **Status:** Complete against the legacy conversion/compatibility documentation and source supplied with FUSE, the complete FUSE schema, and the supplied RailForge Full Guide plus inspected RailForge `1.98.BRAVO99` runtime (`RailForge.dll` assembly `0.12.99.0`). This is a translation ledger, not a promise that every feature has a native equivalent.
+> **Coverage baseline:** The original inventory covers the supplied FUSE schema/source and legacy documentation, plus the supplied RailForge Full Guide and inspected `1.98.BRAVO99` runtime (assembly `0.12.99.0`). Updated 20 September 2026 with focused later corrections. The entire ledger has not been re-audited against later builds. A listed mapping is not a promise of a native equivalent or live validation. See [Evidence and compatibility](./Evidence-and-Compatibility.md).
+
+[Guide index](../README.md) · [All conversion workflows](./Conversion-Workflows.md) · [DLL companion guide](./Code-Mods-and-Optional-Adapters.md)
 
 Use this reference when converting a legacy RailLoader/Strange Customs-family data mod and maintaining one package with a FUSE graph in the mod root and a RailForge graph under `RailForge/game-graph`. It aligns legacy source shapes and every documented FUSE namespace with the closest RailForge representation, including arrays, nested objects, component types, removals, compatibility readers, and RF-only formats.
 
@@ -10,9 +12,13 @@ Legacy is an **input dialect and compatibility path**, not a third native branch
 
 The short installation recipe is in the [dual-runtime quickstart](./FUSE-RailForge-Dual-Runtime-Quickstart.md). The complete workflow and test procedure are in the [dual-runtime technical guide](./FUSE-RailForge-Dual-Runtime-How-To.md).
 
+## DELTA45 follow-up
+
+A [focused DELTA25-to-DELTA45 review](RailForge-DELTA45-Update.md) adds fuel-service behavior, catalog-only pack discovery and missing-animation diagnostics. These are scoped runtime findings, not a new universal graph schema. The core graph and patch fixtures still pass; the historical field inventory below is not retroactively certified against every DELTA45 materializer.
+
 ## Evidence and status legend
 
-The supplied RailForge folder contains the Full Guide, `Info.json`, and `RailForge.dll`. Several detailed documents linked by the Full Guide are not present locally: the graph-patch reference, company-start schema/example, AMM contracts, supplement guide, and several graph/manifest examples. This matrix therefore distinguishes public guidance from current-runtime compatibility.
+The original supplied RailForge folder contained the Full Guide, `Info.json`, and `RailForge.dll`. Several detailed documents linked by the Full Guide are not present locally: the graph-patch reference, company-start schema/example, AMM contracts, supplement guide, and several graph/manifest examples. This matrix therefore distinguishes public guidance from current-runtime compatibility.
 
 | Mark | Meaning |
 | --- | --- |
@@ -51,7 +57,7 @@ Collection notation used below:
 | Definition overrides | `FuseDefinitionOverrides` union | RF `Definitions.json` or provider-specific definition flow | **Manual package conversion**; RF containers are not automatic definition overrides. |
 | Settings file | `Settings` | No equivalent manifest field established by the supplied RF guide | **FUSE-only** unless an RF provider implements settings. |
 | Graph mixinto declaration | FUSE graph `mixinto` and/or manifest data-file list | `mixintos` plus native RF folders | **Manual**; do not copy target names blindly. |
-| Compiled entry point | `AssemblyName`, `EntryMethod` | RF `assemblies` support is mentioned, but the detailed local manifest schema is missing | Separate code-mod design; outside this data-only pattern. |
+| Compiled entry point | `AssemblyName`, `EntryMethod` | RF `assemblies` support is mentioned, but the detailed local manifest schema is missing | Use the shared-UMM ownership pattern or audit another architecture; see [Code mods](./Code-Mods-and-Optional-Adapters.md). |
 
 ### Complete FUSE `Info.json` field inventory
 
@@ -64,15 +70,15 @@ Collection notation used below:
 | `Version` | `version` | **Rename** and keep synchronized. |
 | `ManagerVersion` | No RF graph equivalent | UMM/FUSE-side metadata. |
 | `GameVersion` | RF compatibility metadata, exact supplied schema unavailable | **Manual**. |
-| `AssemblyName`, `EntryMethod` | RF assemblies/entry mechanism | Code-mod concern; do not infer equivalence. |
+| `AssemblyName`, `EntryMethod` | RF assemblies/entry mechanism | In the shared-UMM pattern UMM remains the sole initializer; do not add RF initialization of the same DLL. Other code architectures need an explicit audit. |
 | `HomePage`, `Repository` | RF package metadata, if supported by the target manifest version | Copy only after validating the current RF manifest schema. |
 | `Source` | No established RF equivalent | FUSE provenance enum: `github`, `nexus`, or `local`. |
 | `Requirements[]` | `requires[]` | Generic UMM requirements can be audited by RF; never place a hard `FUSE` requirement in the tested dual data package. |
 | `LoadAfter[]` | `loadAfter[]` | Generic optional ordering only. In the tested dual package, `LoadAfter: ["FUSE"]` was an empirical safe/no-op boundary while a hard requirement was not; do not imply RF resolves a FUSE provider edge. |
 | `FuseLoadPriority` | No direct RF scalar | Express real dependencies/order with RF edges. |
-| `FuseRequires[]` | `requires[]` | **Reshape** requirement objects/versions as needed. |
-| `FuseLoadAfter[]` | `loadAfter[]` | Copy semantic ordering using RF package IDs. |
-| `FuseLoadBefore[]` | `loadBefore[]` | Copy semantic ordering using RF package IDs. |
+| `FuseRequires[]` | `requires[]` | **Reshape** provider identities. Version metadata is not proof of enforcement in the inspected native FUSE ID-only admission path; verify provider versions separately. |
+| `FuseLoadAfter[]` | `loadAfter[]` | Revalidate target eligibility per runtime. Tested native FUSE rejects ordinary asset-only targets even when they satisfy `FuseRequires`. |
+| `FuseLoadBefore[]` | `loadBefore[]` | Revalidate native data-order targets; do not infer UMM-style optional behavior or blindly copy RF provider edges. |
 | `FuseConflictsWith[]` | `conflictsWith[]` | Copy only when the conflict also applies to the RF edition. |
 | `FuseDataFile` | Native RF discovery folder | No RF filename field is required for ordinary graph discovery. |
 | `FuseDataFiles[]` | `RailForge/game-graph/**/*.json` | **Move** files; keep the RF graph out of this FUSE array. |
@@ -80,7 +86,7 @@ Collection notation used below:
 | `FuseDefinitionOverrides` | RF `Definitions.json`/provider flow | **Manual**; not an RF container patch by default. |
 | `Settings` | Provider-specific | No supplied RF data-only equivalent. |
 
-Every `Requirements[]`, `LoadAfter[]`, `FuseRequires[]`, `FuseLoadAfter[]`, `FuseLoadBefore[]`, and `FuseConflictsWith[]` entry may be either a package-ID string or an object with `Id` plus optional `NotBefore` and `NotAfter`. Translate the resolved constraint, including version bounds, into the RF manifest's accepted dependency form.
+The supplied manifest inventory accepts package-ID strings or objects with `Id` and optional `NotBefore` / `NotAfter` for these dependency/order fields. Acceptance of the shape does not establish equivalent enforcement. The inspected native FUSE package path reduces requirements/order entries to ID lists; other conditional/legacy paths are separate. Keep accurate constraints, verify actual versions, and translate them into the RF manifest's supported form. See [Dependencies and discovery](./Dependencies-and-Discovery.md).
 
 `FuseAssetPacks` may be one package-relative folder string or an array of folder strings. `FuseDefinitionOverrides` may be one string, one object, or an array containing both forms. Each object contains required `Path` and optional `StoreIdentifier`.
 
@@ -440,7 +446,7 @@ RF requires finite non-negative `density` and `unitWeightInPounds`; `payPerQuant
 | `name` | `name` | Direct. |
 | `areaId` | Becomes parent dictionary key | Reshape. Find the actual RF area for vanilla patches. |
 | `order` | No RF serialized-industry field found | FUSE-only/manual. |
-| `position` | `localPosition` in public examples; runtime also accepts `position` | Rename/alias. |
+| `position` | `localPosition` in public examples; runtime also accepts `position` | Verify coordinate space before renaming. Inspected TRD paths assign parent-local positions in both runtimes; a source world position needs conversion using the area's transform. |
 | `rotation` | No RF serialized-industry field found | FUSE-only/manual. |
 | `usesContract` | `usesContract` | Direct. |
 | `mergeComponents: true` | Ordinary RF `components` object merge | Reshape; omit the flag. |
@@ -968,6 +974,8 @@ In FUSE, null/missing local transforms preserve existing values. Confirm the sam
 
 ## 9. Progression and map features
 
+**Later correction:** preserve the intended controller as well as the reference shape. TRD required an explicit RF service-industry gate where FUSE inferred one from spans. Whittier required `unlockIncludeIndustryComponents: []` to clear an obsolete permanent claim on a temporary delivery component; omission retained it during existing-feature hydration, and late saved-feature replay could re-enable the completed site. These are scoped findings, not a rule to clear all include lists. See [Progression and save lifecycle](./Progression-and-Save-Lifecycle.md).
+
 RF accepts canonical top-level `mapFeatures` and `progressions`, plus compatibility forms `features` and a nested `progression` wrapper. Prefer canonical lowercase top-level roots.
 
 RF can hydrate the definitions even when **Enable progression materializer** is off, but RF-managed visibility, forced locks, synthetic milestone gates, and `trackGroupsDisableOnUnlock` require that setting. Initial visibility additionally requires **Enforce progression initial visibility**; its safe default is off. The presence of records in Diagnostics therefore does not prove that RF gating is active.
@@ -1122,6 +1130,10 @@ All FUSE target arrays and their RF interpretation:
 There are no FUSE feature-rule target arrays for `spawnPoints` or `telegraphPoleMovements`.
 
 ## 11. Audio
+
+**Audio path correction, 21 September 2026:** the public FUSE schema reuses a URI-only definition for audio `clip`/`file`, but the inspected FUSE binary resolves `file://Audio/example.wav` beneath a literal `file:` directory. Package-relative `Audio/example.wav` and `file(Audio/example.wav)` resolve correctly. Use the working relative form for that build and record the schema exception; do not generalize this to scenery/prefab URI handling. See the [reproducible Cedar Valley audio probe](../examples/CedarValleyWorks/VALIDATION.md#audio-finding). Path resolution was tested; playback was not.
+
+
 
 RF `1.98` has built-in audio catalog mixinto targets even though the supplied Full Guide does not document them. Declare source files under the RF manifest's `whistles`, `horns`, or `bells` mixinto targets. RF consumes a root array for each catalog, whereas FUSE stores each catalog as a dictionary keyed by ID. RF catalog identity is the profile `name`, not the discarded FUSE dictionary key: bell names compare case-sensitively, horn and whistle names case-insensitively; deterministic first owner/occurrence wins. Preserve or deliberately replace the FUSE ID by a stable unique `name` during the reshape.
 
@@ -1292,6 +1304,8 @@ RF `1.98` also imports legacy target `railforgeLegacyCompanyStarts` through inte
 
 ## 14. URI and prefab translation
 
+**Mounted identity is not catalog identity.** Load Dictionary's RF material selection failed when `store.Identifier` (a `railforge://...` mount URI) was compared with its catalog ID. The correction uses native `store.Catalog().identifier` plus exact definition/asset/cargo checks; downstream native resolution supplies the real mount URI. Do not manufacture URI strings or assume catalog IDs equal store IDs. See [Assets and coordinates](./Assets-and-Coordinates.md).
+
 | URI family | FUSE | RailForge |
 | --- | --- | --- |
 | `vanilla://` | Documented runtime source | Documented for loader/station sources. |
@@ -1329,7 +1343,9 @@ Neither supplied public schema defines a general signal/CTC authoring root. FUSE
 - A matching display name does not prove matching node, span, industry, or component identity.
 - A runtime-supported alias is not automatically a stable authoring contract.
 
-## 17. Recommended conversion order
+## 17. Recommended conversion order (FUSE-first)
+
+For RF-first and legacy-first work, use [Conversion workflows](./Conversion-Workflows.md). RF patches can depend on inherited values and operator semantics; reversing field renames alone is insufficient.
 
 1. Freeze and validate the complete FUSE graph.
 2. Create the RF package manifest and native folder structure.
@@ -1347,4 +1363,4 @@ Neither supplied public schema defines a general signal/CTC authoring root. FUSE
 
 FUSE coverage comes from the supplied `fuse-mod.schema.json`, `umm-info.schema.json`, `FUSE_JSON_SCHEMA.md`, examples, and the included FUSE source/runtime normalization code. RailForge coverage comes from the supplied `RailForge FULL GUIDE.md`, `Info.json`, and inspection of the included RF `1.98.BRAVO99` DLL. The missing linked RF schemas/contracts remain an explicit documentation gap; entries derived only from the DLL are labeled runtime-only or handler/manual.
 
-When newer documentation or runtime versions become available, update this matrix and re-run both runtime test suites before treating any new mapping as release-safe.
+Later focused corrections are linked in the relevant sections and recorded in [Evidence and compatibility](./Evidence-and-Compatibility.md). They do not re-certify all historical entries. When changing a runtime, revalidate the contracts your mod uses and repeat the relevant live acceptance in both environments.

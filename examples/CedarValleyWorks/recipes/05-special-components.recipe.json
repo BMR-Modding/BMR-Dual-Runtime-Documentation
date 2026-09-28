@@ -1,0 +1,185 @@
+{
+  "title": "Alternative industry component families",
+  "status": "provider-or-runtime-specific",
+  "prerequisites": [
+    "Choose one intended operating design; do not attach every alternative to the same track.",
+    "Resolve the Confusing Supplements types in FUSE; RF embeds compatibility implementations in the inspected build."
+  ],
+  "notes": [
+    "Captive conversion loads must resolve and have equal units; transfer rates and unloader capacity must be positive.",
+    "TeleportLoading needs input/output spans AND explicit RF base trackSpans.",
+    "interchangedUnloader and arbitrary custom fields require a real loaded provider with a verified contract; no fictional class is claimed to work.",
+    "LoadExporter, LoadImporter and SimplePassengerStop are known RF types without a complete verified public authoring contract here."
+  ],
+  "fuseFragment": {
+    "operations": {
+      "industries": {
+        "cvw-works": {
+          "name": "Cedar Valley Crate Works",
+          "areaId": "cvw-area",
+          "position": {
+            "x": 5.98807,
+            "y": 0,
+            "z": -35.554789
+          },
+          "components": {
+            "remote-load": {
+              "type": "interchangedLoader",
+              "name": "Remote Crate Shipper",
+              "trackSpanIds": [
+                "cvw-p-team"
+              ],
+              "loadId": "cvw.finished-crates",
+              "carTypeFilter": "XM*",
+              "carLoadPeriod": 1,
+              "carLengthFeet": 50
+            },
+            "transfer": {
+              "type": "teleportLoading",
+              "name": "Captive Transfer",
+              "trackSpanIds": [
+                "cvw-p-team"
+              ],
+              "loadId": "cvw.finished-crates",
+              "inputSpanIds": [
+                "cvw-p-team"
+              ],
+              "outputSpanIds": [
+                "cvw-p-factory"
+              ],
+              "carTransferRate": 60000
+            },
+            "convert-in": {
+              "type": "ConfusingSupplements.IndustryComponents.CaptiveConversionUnloader",
+              "name": "Captive Receiving",
+              "trackSpanIds": [
+                "cvw-p-team"
+              ],
+              "loadId": "cvw.unfinished-crates",
+              "convertedLoadId": "cvw.finished-crates",
+              "carTransferRate": 60000,
+              "maxStorage": 120000,
+              "title": "Crate Conversion"
+            },
+            "convert-out": {
+              "type": "ConfusingSupplements.IndustryComponents.CaptiveConversionLoader",
+              "name": "Captive Shipping",
+              "trackSpanIds": [
+                "cvw-p-factory"
+              ],
+              "loadId": "cvw.unfinished-crates",
+              "convertedLoadId": "cvw.finished-crates",
+              "carTransferRate": 60000,
+              "title": "Crate Conversion"
+            },
+            "paid": {
+              "type": "ConfusingSupplements.IndustryComponents.Pay4Resource",
+              "name": "Paid Crates",
+              "trackSpanIds": [
+                "cvw-p-team"
+              ],
+              "loadId": "cvw.finished-crates",
+              "carTransferRate": 60000,
+              "notBeforeHour": 6,
+              "notAfterHour": 20,
+              "costPerUnit": 0.02,
+              "fillPercentage": 1,
+              "bookReasons": [
+                "Cedar Valley supply"
+              ],
+              "title": "Buy Crates"
+            },
+            "empty": {
+              "type": "ConfusingSupplements.IndustryComponents.Empty",
+              "name": "Reserved Component"
+            }
+          }
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "areas": {
+      "cvw-area": {
+        "industries": {
+          "cvw-works": {
+            "components": {
+              "remote-load": {
+                "type": "Model.Ops.InterchangedIndustryLoader",
+                "name": "Remote Crate Shipper",
+                "loadId": "cvw.finished-crates",
+                "carTypeFilter": "XM*",
+                "carLoadPeriod": 1,
+                "carLengthFeet": 50,
+                "trackSpans": [
+                  "cvw-p-team"
+                ]
+              },
+              "transfer": {
+                "type": "Model.Ops.TeleportLoadingIndustry",
+                "name": "Captive Transfer",
+                "loadId": "cvw.finished-crates",
+                "carTransferRate": 60000,
+                "trackSpans": [
+                  "cvw-p-team"
+                ],
+                "inputSpans": [
+                  "cvw-p-team"
+                ],
+                "outputSpans": [
+                  "cvw-p-factory"
+                ]
+              },
+              "convert-in": {
+                "type": "ConfusingSupplements.IndustryComponents.CaptiveConversionUnloader",
+                "name": "Captive Receiving",
+                "loadId": "cvw.unfinished-crates",
+                "convertedLoadId": "cvw.finished-crates",
+                "carTransferRate": 60000,
+                "maxStorage": 120000,
+                "title": "Crate Conversion",
+                "trackSpans": [
+                  "cvw-p-team"
+                ]
+              },
+              "convert-out": {
+                "type": "ConfusingSupplements.IndustryComponents.CaptiveConversionLoader",
+                "name": "Captive Shipping",
+                "loadId": "cvw.unfinished-crates",
+                "convertedLoadId": "cvw.finished-crates",
+                "carTransferRate": 60000,
+                "title": "Crate Conversion",
+                "trackSpans": [
+                  "cvw-p-factory"
+                ]
+              },
+              "paid": {
+                "type": "ConfusingSupplements.IndustryComponents.Pay4Resource",
+                "name": "Paid Crates",
+                "loadId": "cvw.finished-crates",
+                "carTransferRate": 60000,
+                "costPerUnit": 0.02,
+                "fillPercentage": 1,
+                "bookReasons": [
+                  "Cedar Valley supply"
+                ],
+                "title": "Buy Crates",
+                "trackSpans": [
+                  "cvw-p-team"
+                ],
+                "hours": [
+                  6,
+                  20
+                ]
+              },
+              "empty": {
+                "type": "ConfusingSupplements.IndustryComponents.Empty",
+                "name": "Reserved Component"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

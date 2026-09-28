@@ -1,0 +1,13 @@
+{
+  "loads": {
+    "exampleauthor.crated-goods": {
+      "description": "Example Crated Goods",
+      "units": "Pounds",
+      "density": 40,
+      "unitWeightInPounds": 0,
+      "importable": true,
+      "payPerQuantity": 0,
+      "costPerUnit": 0
+    }
+  }
+}

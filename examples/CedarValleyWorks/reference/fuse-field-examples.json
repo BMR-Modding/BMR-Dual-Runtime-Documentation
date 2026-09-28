@@ -1,0 +1,2406 @@
+{
+  "schemaId": "https://hunterr.dev/fuse/schemas/fuse-mod.schema.json",
+  "sha256": "a7fa9464b56753962b57bf02a5f0dc0c657faf986959380b09a75cbf78c8c5d7",
+  "propertyCount": 432,
+  "entries": [
+    {
+      "field": "root.$schema",
+      "pointer": "/properties/$schema",
+      "example": "cvw-example"
+    },
+    {
+      "field": "root.schemaVersion",
+      "pointer": "/properties/schemaVersion",
+      "example": "1.0"
+    },
+    {
+      "field": "root.id",
+      "pointer": "/properties/id",
+      "example": "cvw-example"
+    },
+    {
+      "field": "root.name",
+      "pointer": "/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "root.author",
+      "pointer": "/properties/author",
+      "example": ""
+    },
+    {
+      "field": "root.modVersion",
+      "pointer": "/properties/modVersion",
+      "example": "1.0.0"
+    },
+    {
+      "field": "root.railroaderVersion",
+      "pointer": "/properties/railroaderVersion",
+      "example": "cvw-example"
+    },
+    {
+      "field": "root.description",
+      "pointer": "/properties/description",
+      "example": "Fictional syntax example."
+    },
+    {
+      "field": "root.tags",
+      "pointer": "/properties/tags",
+      "example": []
+    },
+    {
+      "field": "root.coordinateSpace",
+      "pointer": "/properties/coordinateSpace",
+      "example": "world"
+    },
+    {
+      "field": "root.map",
+      "pointer": "/properties/map",
+      "example": {
+        "mapFolder": "Maps/CedarValley"
+      }
+    },
+    {
+      "field": "root.mixinto",
+      "pointer": "/properties/mixinto",
+      "example": {}
+    },
+    {
+      "field": "root.tracks",
+      "pointer": "/properties/tracks",
+      "example": {}
+    },
+    {
+      "field": "root.operations",
+      "pointer": "/properties/operations",
+      "example": {}
+    },
+    {
+      "field": "root.world",
+      "pointer": "/properties/world",
+      "example": {}
+    },
+    {
+      "field": "root.audio",
+      "pointer": "/properties/audio",
+      "example": {}
+    },
+    {
+      "field": "root.progression",
+      "pointer": "/properties/progression",
+      "example": {}
+    },
+    {
+      "field": "root.settings",
+      "pointer": "/properties/settings",
+      "example": {}
+    },
+    {
+      "field": "root.featureRules",
+      "pointer": "/properties/featureRules",
+      "example": {}
+    },
+    {
+      "field": "root.editor",
+      "pointer": "/properties/editor",
+      "example": {}
+    },
+    {
+      "field": "root.extensions",
+      "pointer": "/properties/extensions",
+      "example": {}
+    },
+    {
+      "field": "vec3.x",
+      "pointer": "/$defs/vec3/properties/x",
+      "example": 1
+    },
+    {
+      "field": "vec3.y",
+      "pointer": "/$defs/vec3/properties/y",
+      "example": 1
+    },
+    {
+      "field": "vec3.z",
+      "pointer": "/$defs/vec3/properties/z",
+      "example": 1
+    },
+    {
+      "field": "map.displayName",
+      "pointer": "/$defs/map/properties/displayName",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "map.description",
+      "pointer": "/$defs/map/properties/description",
+      "example": "Fictional syntax example."
+    },
+    {
+      "field": "map.mapFolder",
+      "pointer": "/$defs/map/properties/mapFolder",
+      "example": "Maps/CedarValley"
+    },
+    {
+      "field": "map.suppressBaseWorld",
+      "pointer": "/$defs/map/properties/suppressBaseWorld",
+      "example": true
+    },
+    {
+      "field": "mixinto.target",
+      "pointer": "/$defs/mixinto/properties/target",
+      "example": "cvw-example"
+    },
+    {
+      "field": "mixinto.sourceFile",
+      "pointer": "/$defs/mixinto/properties/sourceFile",
+      "example": "file://Audio/cvw-example.wav"
+    },
+    {
+      "field": "mixinto.requires",
+      "pointer": "/$defs/mixinto/properties/requires",
+      "example": []
+    },
+    {
+      "field": "mixinto.conflictsWith",
+      "pointer": "/$defs/mixinto/properties/conflictsWith",
+      "example": []
+    },
+    {
+      "field": "modRequirement.id",
+      "pointer": "/$defs/modRequirement/properties/id",
+      "example": "cvw-example"
+    },
+    {
+      "field": "modRequirement.notBefore",
+      "pointer": "/$defs/modRequirement/properties/notBefore",
+      "example": "cvw-example"
+    },
+    {
+      "field": "modRequirement.notAfter",
+      "pointer": "/$defs/modRequirement/properties/notAfter",
+      "example": "cvw-example"
+    },
+    {
+      "field": "settingDefinition.type",
+      "pointer": "/$defs/settingDefinition/properties/type",
+      "example": "bool"
+    },
+    {
+      "field": "settingDefinition.label",
+      "pointer": "/$defs/settingDefinition/properties/label",
+      "example": "cvw-example"
+    },
+    {
+      "field": "settingDefinition.description",
+      "pointer": "/$defs/settingDefinition/properties/description",
+      "example": "Fictional syntax example."
+    },
+    {
+      "field": "settingDefinition.scope",
+      "pointer": "/$defs/settingDefinition/properties/scope",
+      "example": "user"
+    },
+    {
+      "field": "settingDefinition.default",
+      "pointer": "/$defs/settingDefinition/properties/default",
+      "example": "cvw-example"
+    },
+    {
+      "field": "settingDefinition.values",
+      "pointer": "/$defs/settingDefinition/properties/values",
+      "example": []
+    },
+    {
+      "field": "settingDefinition.min",
+      "pointer": "/$defs/settingDefinition/properties/min",
+      "example": 1
+    },
+    {
+      "field": "settingDefinition.max",
+      "pointer": "/$defs/settingDefinition/properties/max",
+      "example": 1
+    },
+    {
+      "field": "settingDefinition.step",
+      "pointer": "/$defs/settingDefinition/properties/step",
+      "example": 1
+    },
+    {
+      "field": "settingDefinition.advanced",
+      "pointer": "/$defs/settingDefinition/properties/advanced",
+      "example": false
+    },
+    {
+      "field": "settingDefinition.reloadRequired",
+      "pointer": "/$defs/settingDefinition/properties/reloadRequired",
+      "example": false
+    },
+    {
+      "field": "featureRule.setting",
+      "pointer": "/$defs/featureRule/properties/setting",
+      "example": "cvw-example"
+    },
+    {
+      "field": "featureRule.operator",
+      "pointer": "/$defs/featureRule/properties/operator",
+      "example": "equals"
+    },
+    {
+      "field": "featureRule.value",
+      "pointer": "/$defs/featureRule/properties/value",
+      "example": "cvw-example"
+    },
+    {
+      "field": "featureRule.targets",
+      "pointer": "/$defs/featureRule/properties/targets",
+      "example": {
+        "trackNodes": []
+      }
+    },
+    {
+      "field": "featureTargets.trackNodes",
+      "pointer": "/$defs/featureTargets/properties/trackNodes",
+      "example": []
+    },
+    {
+      "field": "featureTargets.trackSegments",
+      "pointer": "/$defs/featureTargets/properties/trackSegments",
+      "example": []
+    },
+    {
+      "field": "featureTargets.trackSpans",
+      "pointer": "/$defs/featureTargets/properties/trackSpans",
+      "example": []
+    },
+    {
+      "field": "featureTargets.trackAreas",
+      "pointer": "/$defs/featureTargets/properties/trackAreas",
+      "example": []
+    },
+    {
+      "field": "featureTargets.loads",
+      "pointer": "/$defs/featureTargets/properties/loads",
+      "example": []
+    },
+    {
+      "field": "featureTargets.industries",
+      "pointer": "/$defs/featureTargets/properties/industries",
+      "example": []
+    },
+    {
+      "field": "featureTargets.industryComponents",
+      "pointer": "/$defs/featureTargets/properties/industryComponents",
+      "example": []
+    },
+    {
+      "field": "featureTargets.loaders",
+      "pointer": "/$defs/featureTargets/properties/loaders",
+      "example": []
+    },
+    {
+      "field": "featureTargets.turntables",
+      "pointer": "/$defs/featureTargets/properties/turntables",
+      "example": []
+    },
+    {
+      "field": "featureTargets.stations",
+      "pointer": "/$defs/featureTargets/properties/stations",
+      "example": []
+    },
+    {
+      "field": "featureTargets.scenery",
+      "pointer": "/$defs/featureTargets/properties/scenery",
+      "example": []
+    },
+    {
+      "field": "featureTargets.splineys",
+      "pointer": "/$defs/featureTargets/properties/splineys",
+      "example": []
+    },
+    {
+      "field": "featureTargets.waterSurfaces",
+      "pointer": "/$defs/featureTargets/properties/waterSurfaces",
+      "example": []
+    },
+    {
+      "field": "featureTargets.telegraphPoles",
+      "pointer": "/$defs/featureTargets/properties/telegraphPoles",
+      "example": []
+    },
+    {
+      "field": "featureTargets.mapLabels",
+      "pointer": "/$defs/featureTargets/properties/mapLabels",
+      "example": []
+    },
+    {
+      "field": "featureTargets.mapMasks",
+      "pointer": "/$defs/featureTargets/properties/mapMasks",
+      "example": []
+    },
+    {
+      "field": "featureTargets.mapTiles",
+      "pointer": "/$defs/featureTargets/properties/mapTiles",
+      "example": []
+    },
+    {
+      "field": "featureTargets.sceneClones",
+      "pointer": "/$defs/featureTargets/properties/sceneClones",
+      "example": []
+    },
+    {
+      "field": "featureTargets.progressions",
+      "pointer": "/$defs/featureTargets/properties/progressions",
+      "example": []
+    },
+    {
+      "field": "featureTargets.mapFeatures",
+      "pointer": "/$defs/featureTargets/properties/mapFeatures",
+      "example": []
+    },
+    {
+      "field": "featureTargets.whistles",
+      "pointer": "/$defs/featureTargets/properties/whistles",
+      "example": []
+    },
+    {
+      "field": "featureTargets.horns",
+      "pointer": "/$defs/featureTargets/properties/horns",
+      "example": []
+    },
+    {
+      "field": "featureTargets.bells",
+      "pointer": "/$defs/featureTargets/properties/bells",
+      "example": []
+    },
+    {
+      "field": "tracks.nodes",
+      "pointer": "/$defs/tracks/properties/nodes",
+      "example": {}
+    },
+    {
+      "field": "tracks.segments",
+      "pointer": "/$defs/tracks/properties/segments",
+      "example": {}
+    },
+    {
+      "field": "tracks.spans",
+      "pointer": "/$defs/tracks/properties/spans",
+      "example": {}
+    },
+    {
+      "field": "tracks.areas",
+      "pointer": "/$defs/tracks/properties/areas",
+      "example": {}
+    },
+    {
+      "field": "tracks.removals",
+      "pointer": "/$defs/tracks/properties/removals",
+      "example": {}
+    },
+    {
+      "field": "trackRemovals.nodes",
+      "pointer": "/$defs/trackRemovals/properties/nodes",
+      "example": []
+    },
+    {
+      "field": "trackRemovals.segments",
+      "pointer": "/$defs/trackRemovals/properties/segments",
+      "example": []
+    },
+    {
+      "field": "trackRemovals.spans",
+      "pointer": "/$defs/trackRemovals/properties/spans",
+      "example": []
+    },
+    {
+      "field": "trackNode.position",
+      "pointer": "/$defs/trackNode/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "trackNode.rotation",
+      "pointer": "/$defs/trackNode/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "trackNode.flipSwitchStand",
+      "pointer": "/$defs/trackNode/properties/flipSwitchStand",
+      "example": false
+    },
+    {
+      "field": "trackNode.isDiamond",
+      "pointer": "/$defs/trackNode/properties/isDiamond",
+      "example": false
+    },
+    {
+      "field": "trackNode.groupId",
+      "pointer": "/$defs/trackNode/properties/groupId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "trackNode.tags",
+      "pointer": "/$defs/trackNode/properties/tags",
+      "example": []
+    },
+    {
+      "field": "trackSegment.startNodeId",
+      "pointer": "/$defs/trackSegment/properties/startNodeId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "trackSegment.endNodeId",
+      "pointer": "/$defs/trackSegment/properties/endNodeId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "trackSegment.style",
+      "pointer": "/$defs/trackSegment/properties/style",
+      "example": "standard"
+    },
+    {
+      "field": "trackSegment.trackClass",
+      "pointer": "/$defs/trackSegment/properties/trackClass",
+      "example": "main"
+    },
+    {
+      "field": "trackSegment.speedLimit",
+      "pointer": "/$defs/trackSegment/properties/speedLimit",
+      "example": 45
+    },
+    {
+      "field": "trackSegment.priority",
+      "pointer": "/$defs/trackSegment/properties/priority",
+      "example": 0
+    },
+    {
+      "field": "trackSegment.groupId",
+      "pointer": "/$defs/trackSegment/properties/groupId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "trackSegment.tags",
+      "pointer": "/$defs/trackSegment/properties/tags",
+      "example": []
+    },
+    {
+      "field": "trackSegment.gauge",
+      "pointer": "/$defs/trackSegment/properties/gauge",
+      "example": "Standard"
+    },
+    {
+      "field": "trackSegment.bridgeSupportsSteel",
+      "pointer": "/$defs/trackSegment/properties/bridgeSupportsSteel",
+      "example": false
+    },
+    {
+      "field": "trackSegment.yard",
+      "pointer": "/$defs/trackSegment/properties/yard",
+      "example": false
+    },
+    {
+      "field": "trackSegment.partial",
+      "pointer": "/$defs/trackSegment/properties/partial",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preserveStyle",
+      "pointer": "/$defs/trackSegment/properties/preserveStyle",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preserveBridgeSupportsSteel",
+      "pointer": "/$defs/trackSegment/properties/preserveBridgeSupportsSteel",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preserveYard",
+      "pointer": "/$defs/trackSegment/properties/preserveYard",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preserveTrackClass",
+      "pointer": "/$defs/trackSegment/properties/preserveTrackClass",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preserveSpeedLimit",
+      "pointer": "/$defs/trackSegment/properties/preserveSpeedLimit",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preservePriority",
+      "pointer": "/$defs/trackSegment/properties/preservePriority",
+      "example": false
+    },
+    {
+      "field": "trackSegment.preserveGroupId",
+      "pointer": "/$defs/trackSegment/properties/preserveGroupId",
+      "example": false
+    },
+    {
+      "field": "trackLocation.segmentId",
+      "pointer": "/$defs/trackLocation/properties/segmentId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "trackLocation.normalized",
+      "pointer": "/$defs/trackLocation/properties/normalized",
+      "example": 1
+    },
+    {
+      "field": "trackLocation.distance",
+      "pointer": "/$defs/trackLocation/properties/distance",
+      "example": 1
+    },
+    {
+      "field": "trackLocation.end",
+      "pointer": "/$defs/trackLocation/properties/end",
+      "example": "A"
+    },
+    {
+      "field": "trackLocation.offset",
+      "pointer": "/$defs/trackLocation/properties/offset",
+      "example": 0
+    },
+    {
+      "field": "trackSpan.upper",
+      "pointer": "/$defs/trackSpan/properties/upper",
+      "example": {
+        "segmentId": "cvw-example",
+        "normalized": 1
+      }
+    },
+    {
+      "field": "trackSpan.lower",
+      "pointer": "/$defs/trackSpan/properties/lower",
+      "example": {
+        "segmentId": "cvw-example",
+        "normalized": 1
+      }
+    },
+    {
+      "field": "trackSpan.normalize",
+      "pointer": "/$defs/trackSpan/properties/normalize",
+      "example": true
+    },
+    {
+      "field": "trackSpan.groupId",
+      "pointer": "/$defs/trackSpan/properties/groupId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "trackArea.name",
+      "pointer": "/$defs/trackArea/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "trackArea.position",
+      "pointer": "/$defs/trackArea/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "trackArea.radius",
+      "pointer": "/$defs/trackArea/properties/radius",
+      "example": 1
+    },
+    {
+      "field": "trackArea.tagColor",
+      "pointer": "/$defs/trackArea/properties/tagColor",
+      "example": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "field": "trackArea.order",
+      "pointer": "/$defs/trackArea/properties/order",
+      "example": 1
+    },
+    {
+      "field": "trackArea.spanIds",
+      "pointer": "/$defs/trackArea/properties/spanIds",
+      "example": []
+    },
+    {
+      "field": "trackArea.groupId",
+      "pointer": "/$defs/trackArea/properties/groupId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "operations.loads",
+      "pointer": "/$defs/operations/properties/loads",
+      "example": {}
+    },
+    {
+      "field": "operations.industries",
+      "pointer": "/$defs/operations/properties/industries",
+      "example": {}
+    },
+    {
+      "field": "operations.loaders",
+      "pointer": "/$defs/operations/properties/loaders",
+      "example": {}
+    },
+    {
+      "field": "operations.turntables",
+      "pointer": "/$defs/operations/properties/turntables",
+      "example": {}
+    },
+    {
+      "field": "operations.stations",
+      "pointer": "/$defs/operations/properties/stations",
+      "example": {}
+    },
+    {
+      "field": "operations.removals",
+      "pointer": "/$defs/operations/properties/removals",
+      "example": {}
+    },
+    {
+      "field": "operationRemovals.industries",
+      "pointer": "/$defs/operationRemovals/properties/industries",
+      "example": []
+    },
+    {
+      "field": "load.name",
+      "pointer": "/$defs/load/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "load.units",
+      "pointer": "/$defs/load/properties/units",
+      "example": "Pounds"
+    },
+    {
+      "field": "load.density",
+      "pointer": "/$defs/load/properties/density",
+      "example": 62.4
+    },
+    {
+      "field": "load.unitWeightInPounds",
+      "pointer": "/$defs/load/properties/unitWeightInPounds",
+      "example": 0
+    },
+    {
+      "field": "load.importable",
+      "pointer": "/$defs/load/properties/importable",
+      "example": true
+    },
+    {
+      "field": "load.payPerQuantity",
+      "pointer": "/$defs/load/properties/payPerQuantity",
+      "example": 0
+    },
+    {
+      "field": "load.costPerUnit",
+      "pointer": "/$defs/load/properties/costPerUnit",
+      "example": 0
+    },
+    {
+      "field": "load.carTypeFilter",
+      "pointer": "/$defs/load/properties/carTypeFilter",
+      "example": "XM*"
+    },
+    {
+      "field": "load.emptyCarType",
+      "pointer": "/$defs/load/properties/emptyCarType",
+      "example": "XM*"
+    },
+    {
+      "field": "load.loadedCarType",
+      "pointer": "/$defs/load/properties/loadedCarType",
+      "example": "XM*"
+    },
+    {
+      "field": "load.icon",
+      "pointer": "/$defs/load/properties/icon",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "load.fields",
+      "pointer": "/$defs/load/properties/fields",
+      "example": {}
+    },
+    {
+      "field": "industry.name",
+      "pointer": "/$defs/industry/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "industry.areaId",
+      "pointer": "/$defs/industry/properties/areaId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industry.order",
+      "pointer": "/$defs/industry/properties/order",
+      "example": 1
+    },
+    {
+      "field": "industry.position",
+      "pointer": "/$defs/industry/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "industry.rotation",
+      "pointer": "/$defs/industry/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "industry.usesContract",
+      "pointer": "/$defs/industry/properties/usesContract",
+      "example": false
+    },
+    {
+      "field": "industry.mergeComponents",
+      "pointer": "/$defs/industry/properties/mergeComponents",
+      "example": false
+    },
+    {
+      "field": "industry.replaceComponents",
+      "pointer": "/$defs/industry/properties/replaceComponents",
+      "example": false
+    },
+    {
+      "field": "industry.components",
+      "pointer": "/$defs/industry/properties/components",
+      "example": {}
+    },
+    {
+      "field": "industryComponent.remove",
+      "pointer": "/$defs/industryComponent/properties/remove",
+      "example": false
+    },
+    {
+      "field": "industryComponent.partial",
+      "pointer": "/$defs/industryComponent/properties/partial",
+      "example": false
+    },
+    {
+      "field": "industryComponent.type",
+      "pointer": "/$defs/industryComponent/properties/type",
+      "example": "loader"
+    },
+    {
+      "field": "industryComponent.name",
+      "pointer": "/$defs/industryComponent/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "industryComponent.trackSpanIds",
+      "pointer": "/$defs/industryComponent/properties/trackSpanIds",
+      "example": []
+    },
+    {
+      "field": "industryComponent.trackSpanPatch",
+      "pointer": "/$defs/industryComponent/properties/trackSpanPatch",
+      "example": {}
+    },
+    {
+      "field": "industryComponent.carTypeFilter",
+      "pointer": "/$defs/industryComponent/properties/carTypeFilter",
+      "example": "XM*"
+    },
+    {
+      "field": "industryComponent.loadId",
+      "pointer": "/$defs/industryComponent/properties/loadId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industryComponent.convertedLoadId",
+      "pointer": "/$defs/industryComponent/properties/convertedLoadId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industryComponent.sharedStorage",
+      "pointer": "/$defs/industryComponent/properties/sharedStorage",
+      "example": true
+    },
+    {
+      "field": "industryComponent.storageChangeRate",
+      "pointer": "/$defs/industryComponent/properties/storageChangeRate",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.maxStorage",
+      "pointer": "/$defs/industryComponent/properties/maxStorage",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.carTransferRate",
+      "pointer": "/$defs/industryComponent/properties/carTransferRate",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.costPerUnit",
+      "pointer": "/$defs/industryComponent/properties/costPerUnit",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.notBeforeHour",
+      "pointer": "/$defs/industryComponent/properties/notBeforeHour",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.notAfterHour",
+      "pointer": "/$defs/industryComponent/properties/notAfterHour",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.fillPercentage",
+      "pointer": "/$defs/industryComponent/properties/fillPercentage",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.bookReasons",
+      "pointer": "/$defs/industryComponent/properties/bookReasons",
+      "example": []
+    },
+    {
+      "field": "industryComponent.title",
+      "pointer": "/$defs/industryComponent/properties/title",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industryComponent.orderAroundEmpties",
+      "pointer": "/$defs/industryComponent/properties/orderAroundEmpties",
+      "example": true
+    },
+    {
+      "field": "industryComponent.orderAroundLoaded",
+      "pointer": "/$defs/industryComponent/properties/orderAroundLoaded",
+      "example": true
+    },
+    {
+      "field": "industryComponent.inputSpanIds",
+      "pointer": "/$defs/industryComponent/properties/inputSpanIds",
+      "example": []
+    },
+    {
+      "field": "industryComponent.outputSpanIds",
+      "pointer": "/$defs/industryComponent/properties/outputSpanIds",
+      "example": []
+    },
+    {
+      "field": "industryComponent.inputTermsPerDay",
+      "pointer": "/$defs/industryComponent/properties/inputTermsPerDay",
+      "example": {}
+    },
+    {
+      "field": "industryComponent.outputTermsPerDay",
+      "pointer": "/$defs/industryComponent/properties/outputTermsPerDay",
+      "example": {}
+    },
+    {
+      "field": "industryComponent.idealCars",
+      "pointer": "/$defs/industryComponent/properties/idealCars",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.teamProfiles",
+      "pointer": "/$defs/industryComponent/properties/teamProfiles",
+      "example": {}
+    },
+    {
+      "field": "industryComponent.canOverhaul",
+      "pointer": "/$defs/industryComponent/properties/canOverhaul",
+      "example": true
+    },
+    {
+      "field": "industryComponent.passengerStopId",
+      "pointer": "/$defs/industryComponent/properties/passengerStopId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industryComponent.timetableCode",
+      "pointer": "/$defs/industryComponent/properties/timetableCode",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industryComponent.basePopulation",
+      "pointer": "/$defs/industryComponent/properties/basePopulation",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.neighborIds",
+      "pointer": "/$defs/industryComponent/properties/neighborIds",
+      "example": []
+    },
+    {
+      "field": "industryComponent.branch",
+      "pointer": "/$defs/industryComponent/properties/branch",
+      "example": "cvw-example"
+    },
+    {
+      "field": "industryComponent.branchDefinitions",
+      "pointer": "/$defs/industryComponent/properties/branchDefinitions",
+      "example": []
+    },
+    {
+      "field": "industryComponent.carLoadPeriod",
+      "pointer": "/$defs/industryComponent/properties/carLoadPeriod",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.carLengthFeet",
+      "pointer": "/$defs/industryComponent/properties/carLengthFeet",
+      "example": 1
+    },
+    {
+      "field": "industryComponent.fields",
+      "pointer": "/$defs/industryComponent/properties/fields",
+      "example": {}
+    },
+    {
+      "field": "teamTrackEntry.isExport",
+      "pointer": "/$defs/teamTrackEntry/properties/isExport",
+      "example": false
+    },
+    {
+      "field": "teamTrackEntry.loadId",
+      "pointer": "/$defs/teamTrackEntry/properties/loadId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "teamTrackEntry.loadingTimeDays",
+      "pointer": "/$defs/teamTrackEntry/properties/loadingTimeDays",
+      "example": 1
+    },
+    {
+      "field": "teamTrackEntry.carTypeFilter",
+      "pointer": "/$defs/teamTrackEntry/properties/carTypeFilter",
+      "example": "XM*"
+    },
+    {
+      "field": "passengerBranch.branch",
+      "pointer": "/$defs/passengerBranch/properties/branch",
+      "example": "cvw-example"
+    },
+    {
+      "field": "passengerBranch.traverseTimeToNext",
+      "pointer": "/$defs/passengerBranch/properties/traverseTimeToNext",
+      "example": 0
+    },
+    {
+      "field": "passengerBranch.mapFeature",
+      "pointer": "/$defs/passengerBranch/properties/mapFeature",
+      "example": "cvw-example"
+    },
+    {
+      "field": "passengerBranch.intermediates",
+      "pointer": "/$defs/passengerBranch/properties/intermediates",
+      "example": {}
+    },
+    {
+      "field": "passengerIntermediate.code",
+      "pointer": "/$defs/passengerIntermediate/properties/code",
+      "example": "cvw-example"
+    },
+    {
+      "field": "passengerIntermediate.traverseTimeToNext",
+      "pointer": "/$defs/passengerIntermediate/properties/traverseTimeToNext",
+      "example": 0
+    },
+    {
+      "field": "loader.position",
+      "pointer": "/$defs/loader/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "loader.rotation",
+      "pointer": "/$defs/loader/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "loader.prefab",
+      "pointer": "/$defs/loader/properties/prefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "loader.industryId",
+      "pointer": "/$defs/loader/properties/industryId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "turntable.position",
+      "pointer": "/$defs/turntable/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntable.rotation",
+      "pointer": "/$defs/turntable/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntable.radius",
+      "pointer": "/$defs/turntable/properties/radius",
+      "example": 1
+    },
+    {
+      "field": "turntable.subdivisions",
+      "pointer": "/$defs/turntable/properties/subdivisions",
+      "example": 16
+    },
+    {
+      "field": "turntable.legacyIdentifier",
+      "pointer": "/$defs/turntable/properties/legacyIdentifier",
+      "example": "cvw-example"
+    },
+    {
+      "field": "turntable.roundhouse",
+      "pointer": "/$defs/turntable/properties/roundhouse",
+      "example": {
+        "stalls": 1
+      }
+    },
+    {
+      "field": "turntable.visuals",
+      "pointer": "/$defs/turntable/properties/visuals",
+      "example": {}
+    },
+    {
+      "field": "turntableVisuals.pitAssetIdentifier",
+      "pointer": "/$defs/turntableVisuals/properties/pitAssetIdentifier",
+      "example": "cvw-example"
+    },
+    {
+      "field": "turntableVisuals.pitPosition",
+      "pointer": "/$defs/turntableVisuals/properties/pitPosition",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntableVisuals.pitRotation",
+      "pointer": "/$defs/turntableVisuals/properties/pitRotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntableVisuals.pitScale",
+      "pointer": "/$defs/turntableVisuals/properties/pitScale",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntableVisuals.bridgeAssetIdentifier",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeAssetIdentifier",
+      "example": "cvw-example"
+    },
+    {
+      "field": "turntableVisuals.bridgePosition",
+      "pointer": "/$defs/turntableVisuals/properties/bridgePosition",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntableVisuals.bridgeRotation",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeRotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntableVisuals.bridgeScale",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeScale",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "turntableVisuals.bridgeTrackEnabled",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeTrackEnabled",
+      "example": true
+    },
+    {
+      "field": "turntableVisuals.bridgeTrackGauge",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeTrackGauge",
+      "example": 1.435
+    },
+    {
+      "field": "turntableVisuals.bridgeTrackLength",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeTrackLength",
+      "example": 0
+    },
+    {
+      "field": "turntableVisuals.bridgeTrackYOffset",
+      "pointer": "/$defs/turntableVisuals/properties/bridgeTrackYOffset",
+      "example": 0.08
+    },
+    {
+      "field": "turntableVisuals.controllerType",
+      "pointer": "/$defs/turntableVisuals/properties/controllerType",
+      "example": "ExampleProvider.Controller, ExampleProvider"
+    },
+    {
+      "field": "turntableVisuals.interactionRadius",
+      "pointer": "/$defs/turntableVisuals/properties/interactionRadius",
+      "example": 16
+    },
+    {
+      "field": "roundhouse.stalls",
+      "pointer": "/$defs/roundhouse/properties/stalls",
+      "example": 1
+    },
+    {
+      "field": "roundhouse.startAngle",
+      "pointer": "/$defs/roundhouse/properties/startAngle",
+      "example": 0
+    },
+    {
+      "field": "roundhouse.stallAngle",
+      "pointer": "/$defs/roundhouse/properties/stallAngle",
+      "example": 1
+    },
+    {
+      "field": "roundhouse.trackLength",
+      "pointer": "/$defs/roundhouse/properties/trackLength",
+      "example": 46
+    },
+    {
+      "field": "roundhouse.startPrefab",
+      "pointer": "/$defs/roundhouse/properties/startPrefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "roundhouse.endPrefab",
+      "pointer": "/$defs/roundhouse/properties/endPrefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "roundhouse.stallPrefab",
+      "pointer": "/$defs/roundhouse/properties/stallPrefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "station.position",
+      "pointer": "/$defs/station/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "station.rotation",
+      "pointer": "/$defs/station/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "station.prefab",
+      "pointer": "/$defs/station/properties/prefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "station.passengerStopId",
+      "pointer": "/$defs/station/properties/passengerStopId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "world.scenery",
+      "pointer": "/$defs/world/properties/scenery",
+      "example": {}
+    },
+    {
+      "field": "world.spawnPoints",
+      "pointer": "/$defs/world/properties/spawnPoints",
+      "example": []
+    },
+    {
+      "field": "world.splineys",
+      "pointer": "/$defs/world/properties/splineys",
+      "example": {}
+    },
+    {
+      "field": "world.waterSurfaces",
+      "pointer": "/$defs/world/properties/waterSurfaces",
+      "example": {}
+    },
+    {
+      "field": "world.telegraphPoles",
+      "pointer": "/$defs/world/properties/telegraphPoles",
+      "example": {}
+    },
+    {
+      "field": "world.telegraphPoleMovements",
+      "pointer": "/$defs/world/properties/telegraphPoleMovements",
+      "example": []
+    },
+    {
+      "field": "world.mapLabels",
+      "pointer": "/$defs/world/properties/mapLabels",
+      "example": {}
+    },
+    {
+      "field": "world.mapMasks",
+      "pointer": "/$defs/world/properties/mapMasks",
+      "example": {}
+    },
+    {
+      "field": "world.mapTiles",
+      "pointer": "/$defs/world/properties/mapTiles",
+      "example": {}
+    },
+    {
+      "field": "world.sceneClones",
+      "pointer": "/$defs/world/properties/sceneClones",
+      "example": {}
+    },
+    {
+      "field": "world.suppressBaseScenePaths",
+      "pointer": "/$defs/world/properties/suppressBaseScenePaths",
+      "example": []
+    },
+    {
+      "field": "world.suppressBaseTrackGroups",
+      "pointer": "/$defs/world/properties/suppressBaseTrackGroups",
+      "example": []
+    },
+    {
+      "field": "world.suppressBaseAreas",
+      "pointer": "/$defs/world/properties/suppressBaseAreas",
+      "example": []
+    },
+    {
+      "field": "world.suppressScenePaths",
+      "pointer": "/$defs/world/properties/suppressScenePaths",
+      "example": []
+    },
+    {
+      "field": "world.suppressGroups",
+      "pointer": "/$defs/world/properties/suppressGroups",
+      "example": []
+    },
+    {
+      "field": "world.suppressAreas",
+      "pointer": "/$defs/world/properties/suppressAreas",
+      "example": []
+    },
+    {
+      "field": "world.removals",
+      "pointer": "/$defs/world/properties/removals",
+      "example": {}
+    },
+    {
+      "field": "worldRemovals.scenery",
+      "pointer": "/$defs/worldRemovals/properties/scenery",
+      "example": []
+    },
+    {
+      "field": "worldRemovals.splineys",
+      "pointer": "/$defs/worldRemovals/properties/splineys",
+      "example": []
+    },
+    {
+      "field": "worldRemovals.waterSurfaces",
+      "pointer": "/$defs/worldRemovals/properties/waterSurfaces",
+      "example": []
+    },
+    {
+      "field": "worldRemovals.telegraphPoles",
+      "pointer": "/$defs/worldRemovals/properties/telegraphPoles",
+      "example": []
+    },
+    {
+      "field": "worldRemovals.mapLabels",
+      "pointer": "/$defs/worldRemovals/properties/mapLabels",
+      "example": []
+    },
+    {
+      "field": "worldRemovals.mapMasks",
+      "pointer": "/$defs/worldRemovals/properties/mapMasks",
+      "example": []
+    },
+    {
+      "field": "worldRemovals.sceneClones",
+      "pointer": "/$defs/worldRemovals/properties/sceneClones",
+      "example": []
+    },
+    {
+      "field": "scenery.model",
+      "pointer": "/$defs/scenery/properties/model",
+      "example": "cvw-example"
+    },
+    {
+      "field": "scenery.assetIdentifier",
+      "pointer": "/$defs/scenery/properties/assetIdentifier",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "scenery.position",
+      "pointer": "/$defs/scenery/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "scenery.rotation",
+      "pointer": "/$defs/scenery/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "scenery.scale",
+      "pointer": "/$defs/scenery/properties/scale",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "scenery.anchorSpanIds",
+      "pointer": "/$defs/scenery/properties/anchorSpanIds",
+      "example": []
+    },
+    {
+      "field": "spawnPoint.name",
+      "pointer": "/$defs/spawnPoint/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "spawnPoint.position",
+      "pointer": "/$defs/spawnPoint/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "spawnPoint.rotation",
+      "pointer": "/$defs/spawnPoint/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "spawnPoint.radius",
+      "pointer": "/$defs/spawnPoint/properties/radius",
+      "example": 3
+    },
+    {
+      "field": "spawnPoint.priority",
+      "pointer": "/$defs/spawnPoint/properties/priority",
+      "example": 0
+    },
+    {
+      "field": "spliney.type",
+      "pointer": "/$defs/spliney/properties/type",
+      "example": "river"
+    },
+    {
+      "field": "spliney.profile",
+      "pointer": "/$defs/spliney/properties/profile",
+      "example": "cvw-example"
+    },
+    {
+      "field": "spliney.style",
+      "pointer": "/$defs/spliney/properties/style",
+      "example": "cvw-example"
+    },
+    {
+      "field": "spliney.offsetY",
+      "pointer": "/$defs/spliney/properties/offsetY",
+      "example": 0
+    },
+    {
+      "field": "spliney.headStyle",
+      "pointer": "/$defs/spliney/properties/headStyle",
+      "example": "cvw-example"
+    },
+    {
+      "field": "spliney.tailStyle",
+      "pointer": "/$defs/spliney/properties/tailStyle",
+      "example": "cvw-example"
+    },
+    {
+      "field": "spliney.assetIdentifier",
+      "pointer": "/$defs/spliney/properties/assetIdentifier",
+      "example": "cvw-example"
+    },
+    {
+      "field": "spliney.prefab",
+      "pointer": "/$defs/spliney/properties/prefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "spliney.spacing",
+      "pointer": "/$defs/spliney/properties/spacing",
+      "example": 5
+    },
+    {
+      "field": "spliney.instanceScale",
+      "pointer": "/$defs/spliney/properties/instanceScale",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "spliney.rotationOffset",
+      "pointer": "/$defs/spliney/properties/rotationOffset",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "spliney.lateralOffset",
+      "pointer": "/$defs/spliney/properties/lateralOffset",
+      "example": 0
+    },
+    {
+      "field": "spliney.verticalOffset",
+      "pointer": "/$defs/spliney/properties/verticalOffset",
+      "example": 0
+    },
+    {
+      "field": "spliney.snapToTerrain",
+      "pointer": "/$defs/spliney/properties/snapToTerrain",
+      "example": false
+    },
+    {
+      "field": "spliney.alignToSlope",
+      "pointer": "/$defs/spliney/properties/alignToSlope",
+      "example": false
+    },
+    {
+      "field": "spliney.placeAtEnd",
+      "pointer": "/$defs/spliney/properties/placeAtEnd",
+      "example": true
+    },
+    {
+      "field": "spliney.maximumInstances",
+      "pointer": "/$defs/spliney/properties/maximumInstances",
+      "example": 1024
+    },
+    {
+      "field": "spliney.points",
+      "pointer": "/$defs/spliney/properties/points",
+      "example": [
+        {
+          "position": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "position": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ]
+    },
+    {
+      "field": "splineyPoint.position",
+      "pointer": "/$defs/splineyPoint/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "splineyPoint.rotation",
+      "pointer": "/$defs/splineyPoint/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "splineyPoint.width",
+      "pointer": "/$defs/splineyPoint/properties/width",
+      "example": 1
+    },
+    {
+      "field": "waterSurface.points",
+      "pointer": "/$defs/waterSurface/properties/points",
+      "example": [
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      ]
+    },
+    {
+      "field": "waterSurface.sourceLakePath",
+      "pointer": "/$defs/waterSurface/properties/sourceLakePath",
+      "example": "World/REPLACE-WITH-VERIFIED-PATH"
+    },
+    {
+      "field": "waterSurface.materialName",
+      "pointer": "/$defs/waterSurface/properties/materialName",
+      "example": "cvw-example"
+    },
+    {
+      "field": "waterSurface.lockHeight",
+      "pointer": "/$defs/waterSurface/properties/lockHeight",
+      "example": true
+    },
+    {
+      "field": "waterSurface.snapToTerrain",
+      "pointer": "/$defs/waterSurface/properties/snapToTerrain",
+      "example": false
+    },
+    {
+      "field": "waterSurface.enableCollider",
+      "pointer": "/$defs/waterSurface/properties/enableCollider",
+      "example": true
+    },
+    {
+      "field": "waterSurface.uvScale",
+      "pointer": "/$defs/waterSurface/properties/uvScale",
+      "example": 1
+    },
+    {
+      "field": "waterSurface.triangleDensity",
+      "pointer": "/$defs/waterSurface/properties/triangleDensity",
+      "example": 0.2
+    },
+    {
+      "field": "waterSurface.maximumTriangleArea",
+      "pointer": "/$defs/waterSurface/properties/maximumTriangleArea",
+      "example": 50
+    },
+    {
+      "field": "waterSurface.yOffset",
+      "pointer": "/$defs/waterSurface/properties/yOffset",
+      "example": 0
+    },
+    {
+      "field": "telegraphPoles.profile",
+      "pointer": "/$defs/telegraphPoles/properties/profile",
+      "example": "cvw-example"
+    },
+    {
+      "field": "telegraphPoles.polePrefab",
+      "pointer": "/$defs/telegraphPoles/properties/polePrefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "telegraphPoles.wirePrefab",
+      "pointer": "/$defs/telegraphPoles/properties/wirePrefab",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "telegraphPoles.spacing",
+      "pointer": "/$defs/telegraphPoles/properties/spacing",
+      "example": 1
+    },
+    {
+      "field": "telegraphPoles.points",
+      "pointer": "/$defs/telegraphPoles/properties/points",
+      "example": [
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      ]
+    },
+    {
+      "field": "telegraphPoleMovement.poleIndices",
+      "pointer": "/$defs/telegraphPoleMovement/properties/poleIndices",
+      "example": [
+        1
+      ]
+    },
+    {
+      "field": "telegraphPoleMovement.offset",
+      "pointer": "/$defs/telegraphPoleMovement/properties/offset",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "mapLabel.text",
+      "pointer": "/$defs/mapLabel/properties/text",
+      "example": "cvw-example"
+    },
+    {
+      "field": "mapLabel.style",
+      "pointer": "/$defs/mapLabel/properties/style",
+      "example": "label"
+    },
+    {
+      "field": "mapLabel.speedLimitMph",
+      "pointer": "/$defs/mapLabel/properties/speedLimitMph",
+      "example": 1
+    },
+    {
+      "field": "mapLabel.position",
+      "pointer": "/$defs/mapLabel/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "mapLabel.rotation",
+      "pointer": "/$defs/mapLabel/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "mapLabel.size",
+      "pointer": "/$defs/mapLabel/properties/size",
+      "example": 1
+    },
+    {
+      "field": "mapLabel.color",
+      "pointer": "/$defs/mapLabel/properties/color",
+      "example": "#FFFFFFFF"
+    },
+    {
+      "field": "circleMask.type",
+      "pointer": "/$defs/circleMask/properties/type",
+      "example": "circle"
+    },
+    {
+      "field": "circleMask.center",
+      "pointer": "/$defs/circleMask/properties/center",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "circleMask.rotation",
+      "pointer": "/$defs/circleMask/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "circleMask.radius",
+      "pointer": "/$defs/circleMask/properties/radius",
+      "example": 1
+    },
+    {
+      "field": "circleMask.falloff",
+      "pointer": "/$defs/circleMask/properties/falloff",
+      "example": 1
+    },
+    {
+      "field": "circleMask.enableSetHeight",
+      "pointer": "/$defs/circleMask/properties/enableSetHeight",
+      "example": true
+    },
+    {
+      "field": "circleMask.enableCutTrees",
+      "pointer": "/$defs/circleMask/properties/enableCutTrees",
+      "example": true
+    },
+    {
+      "field": "circleMask.enableMaskModifier",
+      "pointer": "/$defs/circleMask/properties/enableMaskModifier",
+      "example": true
+    },
+    {
+      "field": "circleMask.maskName",
+      "pointer": "/$defs/circleMask/properties/maskName",
+      "example": "cvw-example"
+    },
+    {
+      "field": "circleMask.order",
+      "pointer": "/$defs/circleMask/properties/order",
+      "example": 1
+    },
+    {
+      "field": "rectangleMask.type",
+      "pointer": "/$defs/rectangleMask/properties/type",
+      "example": "rectangle"
+    },
+    {
+      "field": "rectangleMask.center",
+      "pointer": "/$defs/rectangleMask/properties/center",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "rectangleMask.rotation",
+      "pointer": "/$defs/rectangleMask/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "rectangleMask.size",
+      "pointer": "/$defs/rectangleMask/properties/size",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "rectangleMask.falloff",
+      "pointer": "/$defs/rectangleMask/properties/falloff",
+      "example": 1
+    },
+    {
+      "field": "rectangleMask.enableSetHeight",
+      "pointer": "/$defs/rectangleMask/properties/enableSetHeight",
+      "example": true
+    },
+    {
+      "field": "rectangleMask.enableCutTrees",
+      "pointer": "/$defs/rectangleMask/properties/enableCutTrees",
+      "example": true
+    },
+    {
+      "field": "rectangleMask.enableMaskModifier",
+      "pointer": "/$defs/rectangleMask/properties/enableMaskModifier",
+      "example": true
+    },
+    {
+      "field": "rectangleMask.maskName",
+      "pointer": "/$defs/rectangleMask/properties/maskName",
+      "example": "cvw-example"
+    },
+    {
+      "field": "rectangleMask.order",
+      "pointer": "/$defs/rectangleMask/properties/order",
+      "example": 1
+    },
+    {
+      "field": "curveMask.type",
+      "pointer": "/$defs/curveMask/properties/type",
+      "example": "curve"
+    },
+    {
+      "field": "curveMask.center",
+      "pointer": "/$defs/curveMask/properties/center",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "curveMask.rotation",
+      "pointer": "/$defs/curveMask/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "curveMask.width",
+      "pointer": "/$defs/curveMask/properties/width",
+      "example": 1
+    },
+    {
+      "field": "curveMask.points",
+      "pointer": "/$defs/curveMask/properties/points",
+      "example": [
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      ]
+    },
+    {
+      "field": "curveMask.falloff",
+      "pointer": "/$defs/curveMask/properties/falloff",
+      "example": 1
+    },
+    {
+      "field": "curveMask.enableSetHeight",
+      "pointer": "/$defs/curveMask/properties/enableSetHeight",
+      "example": true
+    },
+    {
+      "field": "curveMask.enableCutTrees",
+      "pointer": "/$defs/curveMask/properties/enableCutTrees",
+      "example": true
+    },
+    {
+      "field": "curveMask.enableMaskModifier",
+      "pointer": "/$defs/curveMask/properties/enableMaskModifier",
+      "example": true
+    },
+    {
+      "field": "curveMask.maskName",
+      "pointer": "/$defs/curveMask/properties/maskName",
+      "example": "cvw-example"
+    },
+    {
+      "field": "curveMask.order",
+      "pointer": "/$defs/curveMask/properties/order",
+      "example": 1
+    },
+    {
+      "field": "mapTileSource.directory",
+      "pointer": "/$defs/mapTileSource/properties/directory",
+      "example": "Maps/CedarValley"
+    },
+    {
+      "field": "mapTileSource.sourceFolder",
+      "pointer": "/$defs/mapTileSource/properties/sourceFolder",
+      "example": "Maps/CedarValley"
+    },
+    {
+      "field": "mapTileSource.priority",
+      "pointer": "/$defs/mapTileSource/properties/priority",
+      "example": 0
+    },
+    {
+      "field": "sceneClone.targetPath",
+      "pointer": "/$defs/sceneClone/properties/targetPath",
+      "example": "World/REPLACE-WITH-VERIFIED-PATH"
+    },
+    {
+      "field": "sceneClone.source",
+      "pointer": "/$defs/sceneClone/properties/source",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "sceneClone.enabled",
+      "pointer": "/$defs/sceneClone/properties/enabled",
+      "example": true
+    },
+    {
+      "field": "sceneClone.localPosition",
+      "pointer": "/$defs/sceneClone/properties/localPosition",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "sceneClone.localRotation",
+      "pointer": "/$defs/sceneClone/properties/localRotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "sceneClone.localScale",
+      "pointer": "/$defs/sceneClone/properties/localScale",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "audio.whistles",
+      "pointer": "/$defs/audio/properties/whistles",
+      "example": {}
+    },
+    {
+      "field": "audio.horns",
+      "pointer": "/$defs/audio/properties/horns",
+      "example": {}
+    },
+    {
+      "field": "audio.bells",
+      "pointer": "/$defs/audio/properties/bells",
+      "example": {}
+    },
+    {
+      "field": "audioWhistle.name",
+      "pointer": "/$defs/audioWhistle/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "audioWhistle.clip",
+      "pointer": "/$defs/audioWhistle/properties/clip",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "audioWhistle.model",
+      "pointer": "/$defs/audioWhistle/properties/model",
+      "example": {}
+    },
+    {
+      "field": "audioWhistle.rampUpPitch",
+      "pointer": "/$defs/audioWhistle/properties/rampUpPitch",
+      "example": 1
+    },
+    {
+      "field": "audioWhistle.lerpSpeed",
+      "pointer": "/$defs/audioWhistle/properties/lerpSpeed",
+      "example": 1
+    },
+    {
+      "field": "audioWhistle.airLerpSpeed",
+      "pointer": "/$defs/audioWhistle/properties/airLerpSpeed",
+      "example": 1
+    },
+    {
+      "field": "audioHorn.name",
+      "pointer": "/$defs/audioHorn/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "audioHorn.layers",
+      "pointer": "/$defs/audioHorn/properties/layers",
+      "example": [
+        {
+          "file": "scenery://freight-house-general"
+        }
+      ]
+    },
+    {
+      "field": "audioHornLayer.file",
+      "pointer": "/$defs/audioHornLayer/properties/file",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "audioHornLayer.keyframes",
+      "pointer": "/$defs/audioHornLayer/properties/keyframes",
+      "example": []
+    },
+    {
+      "field": "audioBell.name",
+      "pointer": "/$defs/audioBell/properties/name",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "audioBell.file",
+      "pointer": "/$defs/audioBell/properties/file",
+      "example": "scenery://freight-house-general"
+    },
+    {
+      "field": "audioBell.indexTimes",
+      "pointer": "/$defs/audioBell/properties/indexTimes",
+      "example": []
+    },
+    {
+      "field": "audioAssetReference.assetPackIdentifier",
+      "pointer": "/$defs/audioAssetReference/properties/assetPackIdentifier",
+      "example": "cvw-example"
+    },
+    {
+      "field": "audioAssetReference.assetIdentifier",
+      "pointer": "/$defs/audioAssetReference/properties/assetIdentifier",
+      "example": "cvw-example"
+    },
+    {
+      "field": "audioKeyframe.t",
+      "pointer": "/$defs/audioKeyframe/properties/t",
+      "example": 1
+    },
+    {
+      "field": "audioKeyframe.value",
+      "pointer": "/$defs/audioKeyframe/properties/value",
+      "example": 1
+    },
+    {
+      "field": "progression.progressionId",
+      "pointer": "/$defs/progression/properties/progressionId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "progression.sections",
+      "pointer": "/$defs/progression/properties/sections",
+      "example": []
+    },
+    {
+      "field": "progression.progressions",
+      "pointer": "/$defs/progression/properties/progressions",
+      "example": {}
+    },
+    {
+      "field": "progression.mapFeatures",
+      "pointer": "/$defs/progression/properties/mapFeatures",
+      "example": {}
+    },
+    {
+      "field": "progressionDefinition.baseProgression",
+      "pointer": "/$defs/progressionDefinition/properties/baseProgression",
+      "example": "cvw-example"
+    },
+    {
+      "field": "progressionDefinition.sections",
+      "pointer": "/$defs/progressionDefinition/properties/sections",
+      "example": {}
+    },
+    {
+      "field": "progressionDefinition.enableFeaturesAtStart",
+      "pointer": "/$defs/progressionDefinition/properties/enableFeaturesAtStart",
+      "example": []
+    },
+    {
+      "field": "section.id",
+      "pointer": "/$defs/section/properties/id",
+      "example": "cvw-example"
+    },
+    {
+      "field": "section.progressionId",
+      "pointer": "/$defs/section/properties/progressionId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "section.displayName",
+      "pointer": "/$defs/section/properties/displayName",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "section.description",
+      "pointer": "/$defs/section/properties/description",
+      "example": "Fictional syntax example."
+    },
+    {
+      "field": "section.prerequisiteSections",
+      "pointer": "/$defs/section/properties/prerequisiteSections",
+      "example": []
+    },
+    {
+      "field": "section.prerequisiteSectionIds",
+      "pointer": "/$defs/section/properties/prerequisiteSectionIds",
+      "example": []
+    },
+    {
+      "field": "section.enableFeaturesOnUnlock",
+      "pointer": "/$defs/section/properties/enableFeaturesOnUnlock",
+      "example": []
+    },
+    {
+      "field": "section.disableFeaturesOnUnlock",
+      "pointer": "/$defs/section/properties/disableFeaturesOnUnlock",
+      "example": []
+    },
+    {
+      "field": "section.enableFeaturesOnAvailable",
+      "pointer": "/$defs/section/properties/enableFeaturesOnAvailable",
+      "example": []
+    },
+    {
+      "field": "section.unlockIncludeIndustries",
+      "pointer": "/$defs/section/properties/unlockIncludeIndustries",
+      "example": []
+    },
+    {
+      "field": "section.unlockExcludeIndustries",
+      "pointer": "/$defs/section/properties/unlockExcludeIndustries",
+      "example": []
+    },
+    {
+      "field": "section.unlockIncludeIndustryComponents",
+      "pointer": "/$defs/section/properties/unlockIncludeIndustryComponents",
+      "example": []
+    },
+    {
+      "field": "section.areasEnableOnUnlock",
+      "pointer": "/$defs/section/properties/areasEnableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "section.gameObjectsEnableOnUnlock",
+      "pointer": "/$defs/section/properties/gameObjectsEnableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "section.trackGroupsEnableOnUnlock",
+      "pointer": "/$defs/section/properties/trackGroupsEnableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "section.trackGroupsAvailableOnUnlock",
+      "pointer": "/$defs/section/properties/trackGroupsAvailableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "section.interchangeTransfers",
+      "pointer": "/$defs/section/properties/interchangeTransfers",
+      "example": {}
+    },
+    {
+      "field": "section.deliveryPhases",
+      "pointer": "/$defs/section/properties/deliveryPhases",
+      "example": []
+    },
+    {
+      "field": "deliveryPhase.cost",
+      "pointer": "/$defs/deliveryPhase/properties/cost",
+      "example": 0
+    },
+    {
+      "field": "deliveryPhase.industryComponentId",
+      "pointer": "/$defs/deliveryPhase/properties/industryComponentId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "deliveryPhase.deliveries",
+      "pointer": "/$defs/deliveryPhase/properties/deliveries",
+      "example": []
+    },
+    {
+      "field": "delivery.carTypeFilter",
+      "pointer": "/$defs/delivery/properties/carTypeFilter",
+      "example": "XM*"
+    },
+    {
+      "field": "delivery.loadId",
+      "pointer": "/$defs/delivery/properties/loadId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "delivery.count",
+      "pointer": "/$defs/delivery/properties/count",
+      "example": 1
+    },
+    {
+      "field": "delivery.direction",
+      "pointer": "/$defs/delivery/properties/direction",
+      "example": "loadToIndustry"
+    },
+    {
+      "field": "delivery.destinationIndustryId",
+      "pointer": "/$defs/delivery/properties/destinationIndustryId",
+      "example": "cvw-example"
+    },
+    {
+      "field": "mapFeature.displayName",
+      "pointer": "/$defs/mapFeature/properties/displayName",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "mapFeature.description",
+      "pointer": "/$defs/mapFeature/properties/description",
+      "example": "Fictional syntax example."
+    },
+    {
+      "field": "mapFeature.initiallyEnabled",
+      "pointer": "/$defs/mapFeature/properties/initiallyEnabled",
+      "example": false
+    },
+    {
+      "field": "mapFeature.groupIds",
+      "pointer": "/$defs/mapFeature/properties/groupIds",
+      "example": []
+    },
+    {
+      "field": "mapFeature.prerequisiteFeatureIds",
+      "pointer": "/$defs/mapFeature/properties/prerequisiteFeatureIds",
+      "example": []
+    },
+    {
+      "field": "mapFeature.trackGroupsEnableOnUnlock",
+      "pointer": "/$defs/mapFeature/properties/trackGroupsEnableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "mapFeature.trackGroupsAvailableOnUnlock",
+      "pointer": "/$defs/mapFeature/properties/trackGroupsAvailableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "mapFeature.areasEnableOnUnlock",
+      "pointer": "/$defs/mapFeature/properties/areasEnableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "mapFeature.gameObjectsEnableOnUnlock",
+      "pointer": "/$defs/mapFeature/properties/gameObjectsEnableOnUnlock",
+      "example": []
+    },
+    {
+      "field": "mapFeature.unlockIncludeIndustries",
+      "pointer": "/$defs/mapFeature/properties/unlockIncludeIndustries",
+      "example": []
+    },
+    {
+      "field": "mapFeature.unlockExcludeIndustries",
+      "pointer": "/$defs/mapFeature/properties/unlockExcludeIndustries",
+      "example": []
+    },
+    {
+      "field": "mapFeature.unlockIncludeIndustryComponents",
+      "pointer": "/$defs/mapFeature/properties/unlockIncludeIndustryComponents",
+      "example": []
+    },
+    {
+      "field": "editor.projectName",
+      "pointer": "/$defs/editor/properties/projectName",
+      "example": "Cedar Valley Works"
+    },
+    {
+      "field": "editor.lastEditedUtc",
+      "pointer": "/$defs/editor/properties/lastEditedUtc",
+      "example": "2026-09-21T00:00:00Z"
+    },
+    {
+      "field": "editor.viewport",
+      "pointer": "/$defs/editor/properties/viewport",
+      "example": {}
+    },
+    {
+      "field": "editor.viewport.position",
+      "pointer": "/$defs/editor/properties/viewport/properties/position",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "editor.viewport.rotation",
+      "pointer": "/$defs/editor/properties/viewport/properties/rotation",
+      "example": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "field": "editor.selectedObject",
+      "pointer": "/$defs/editor/properties/selectedObject",
+      "example": {}
+    },
+    {
+      "field": "editor.selectedObject.id",
+      "pointer": "/$defs/editor/properties/selectedObject/properties/id",
+      "example": "cvw-example"
+    },
+    {
+      "field": "editor.selectedObject.type",
+      "pointer": "/$defs/editor/properties/selectedObject/properties/type",
+      "example": "loader"
+    },
+    {
+      "field": "stringListPatch.add",
+      "pointer": "/$defs/stringListPatch/properties/add",
+      "example": []
+    },
+    {
+      "field": "stringListPatch.append",
+      "pointer": "/$defs/stringListPatch/properties/append",
+      "example": []
+    },
+    {
+      "field": "stringListPatch.prepend",
+      "pointer": "/$defs/stringListPatch/properties/prepend",
+      "example": []
+    },
+    {
+      "field": "stringListPatch.insert",
+      "pointer": "/$defs/stringListPatch/properties/insert",
+      "example": []
+    },
+    {
+      "field": "stringListPatch.replace",
+      "pointer": "/$defs/stringListPatch/properties/replace",
+      "example": []
+    },
+    {
+      "field": "stringListPatch.remove",
+      "pointer": "/$defs/stringListPatch/properties/remove",
+      "example": []
+    }
+  ]
+}

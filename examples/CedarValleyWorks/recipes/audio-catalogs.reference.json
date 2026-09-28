@@ -1,0 +1,58 @@
+{
+  "explanation": "Values are separate root-array files, not a single RF graph.",
+  "catalogs": {
+    "whistles": [
+      {
+        "name": "Cedar Valley Whistle",
+        "clip": "Audio/cvw-whistle.wav"
+      }
+    ],
+    "horns": [
+      {
+        "name": "Cedar Valley Horn",
+        "layers": [
+          {
+            "file": "Audio/cvw-horn.wav",
+            "keyframes": [
+              {
+                "value": 0,
+                "time": 0
+              },
+              {
+                "value": 1,
+                "time": 0.2
+              },
+              {
+                "value": 0,
+                "time": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "bells": [
+      {
+        "name": "Cedar Valley Bell",
+        "file": "Audio/cvw-bell.wav",
+        "indexTimes": [
+          0.2,
+          0.7
+        ]
+      }
+    ]
+  },
+  "manifestFragment": {
+    "mixintos": {
+      "whistles": [
+        "file(Audio/whistles.json)"
+      ],
+      "horns": [
+        "file(Audio/horns.json)"
+      ],
+      "bells": [
+        "file(Audio/bells.json)"
+      ]
+    }
+  }
+}

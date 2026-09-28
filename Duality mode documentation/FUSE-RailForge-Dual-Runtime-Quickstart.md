@@ -1,4 +1,6 @@
-# Quick Start: Legacy Source to One FUSE/RailForge Mod Folder
+# Quickstart: One Mod Folder for FUSE or RailForge
+
+Updated 20 September 2026. [Guide index](../README.md) · [Choose a workflow](./Conversion-Workflows.md)
 
 This setup lets one installed Railroader mod package support **either FUSE or RailForge**.
 
@@ -8,9 +10,11 @@ The package contains two separate graph files:
 - RailForge reads the graph inside `RailForge/game-graph`.
 - Each runtime leaves the other runtime's graph alone.
 
-The graph files are not interchangeable. For a new mod, build it in FUSE first, then make a RailForge version of the same content. For an existing RailLoader/Strange Customs-family mod, treat the legacy package as conversion input and audit the generated FUSE and RF branches independently.
+The graph files are not interchangeable. For a new data mod, FUSE-first is a useful starting workflow. For an existing RailForge or legacy mod, keep your maintained source authoritative and follow the corresponding [conversion workflow](./Conversion-Workflows.md). Choose one source of intent and update both runtime branches from it.
 
-> This setup is for data-only graph/content mods. RailForge and FUSE both implement selected legacy compatibility, but neither provides universal conversion of arbitrary DLL behavior. It was proven with the East Whittier Yard test on 4 September 2026.
+> The basic example below is data-only. Code-and-data packages can use the same layout plus one shared UMM DLL when its dependencies permit it; see [Code mods](./Code-Mods-and-Optional-Adapters.md). The original folder pattern was proven with East Whittier on 4 September 2026. Later findings have their own [evidence boundaries](./Evidence-and-Compatibility.md).
+
+For complete small files, start with the [paired cargo example](../examples/README.md). For a connected district with industries, service facilities and progression, follow [Cedar Valley Works](../examples/CedarValleyWorks/README.md) and its [illustrated editor session](../examples/CedarValleyWorks/EDITOR-WORKFLOW.md).
 
 ## 1. Create this folder structure
 
@@ -73,6 +77,8 @@ Important:
 - `LoadAfter: ["FUSE"]` is an optional UMM ordering hint when FUSE is installed; it is not a hard dependency.
 - Do not leave backup files ending in `.fuse.json` inside the release folder.
 
+`LoadAfter` and `FuseLoadAfter` are different systems. In inspected native FUSE discovery, an asset-only mod can satisfy `FuseRequires` but cannot be used as an ordinary `FuseLoadAfter` data-package target. Missing or disabled native order targets can block admission. Read [Dependencies and discovery](./Dependencies-and-Discovery.md) before adding providers.
+
 ## 3. Add a minimal `Definition.json`
 
 Put this file beside `Info.json`:
@@ -116,7 +122,7 @@ Your.Mod.Name/RailForge/game-graph/your-mod.json
 
 Do not put the RF graph in the mod root, and do not add it to `FuseDataFiles`.
 
-Keep FUSE as your source of truth. Whenever the mod changes:
+For the FUSE-first workflow, keep FUSE as your source of truth. Whenever the mod changes:
 
 1. Make and test the change in FUSE.
 2. Reproduce the same change in the RF graph.
@@ -202,6 +208,12 @@ Then run this smoke test:
 If legacy compatibility remains in the release, add a third isolated test using only the intended legacy reader path. Confirm from the logs that the same payload was not also discovered through the native branch.
 
 Use test saves or backups. Matching package IDs do not automatically guarantee that a save can move safely between runtimes.
+
+## If your mod also has a DLL
+
+Declare `AssemblyName` and `EntryMethod` together for the UMM entry point. In the shared-UMM pattern, RF's `Definition.json` does not initialize that DLL a second time. A loader-bound DLL may need an adapter or source rebuild; adding manifests alone does not fix binary dependencies.
+
+Follow [Code mods and optional adapters](./Code-Mods-and-Optional-Adapters.md), then complete [Testing and release](./Testing-and-Release.md).
 
 ## Finished result
 

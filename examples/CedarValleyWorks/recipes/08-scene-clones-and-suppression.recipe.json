@@ -1,0 +1,66 @@
+{
+  "title": "Clone, transform or hide a known scene object",
+  "status": "requires-scene-path",
+  "prerequisites": [
+    "Replace both scene paths after inspecting the loaded hierarchy."
+  ],
+  "notes": [
+    "These transforms are local to the chosen parent, not necessarily world coordinates.",
+    "RF mandela null is hide-only, not destruction. FUSE group/area suppression is visibility intent, not RF deletion."
+  ],
+  "fuseFragment": {
+    "world": {
+      "sceneClones": {
+        "cvw-clone": {
+          "targetPath": "World/CedarValley/ClonedProp",
+          "source": "path://World/REPLACE-SOURCE",
+          "enabled": true,
+          "localPosition": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          },
+          "localRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "localScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "suppressBaseScenePaths": [
+        "World/REPLACE-HIDE-TARGET"
+      ]
+    }
+  },
+  "railforgeFragment": {
+    "mandelas": {
+      "World/CedarValley/ClonedProp": {
+        "instantiateFrom": "path://World/REPLACE-SOURCE",
+        "enabled": true,
+        "localPosition": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "localRotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "localScale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      },
+      "World/REPLACE-HIDE-TARGET": {
+        "enabled": false
+      }
+    }
+  }
+}

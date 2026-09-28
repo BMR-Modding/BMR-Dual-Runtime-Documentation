@@ -1,0 +1,181 @@
+{
+  "explanation": "Separate reference surfaces. Place each payload according to placement, never copy this envelope as a graph.",
+  "companyStart": {
+    "placement": "starts/cedar-valley.json, explicitly declared by mixintos.railforgeCompanyStarts",
+    "manifestFragment": {
+      "mixintos": {
+        "railforgeCompanyStarts": [
+          "file(starts/cedar-valley.json)"
+        ]
+      }
+    },
+    "payload": {
+      "schemaVersion": 1,
+      "startId": "cvw-start",
+      "displayName": "Cedar Valley",
+      "progressionId": "ewh",
+      "showTutorial": false,
+      "openingCash": 10000,
+      "playerSpawn": {
+        "position": [
+          -30974.700206,
+          527.52,
+          -20377.917827
+        ],
+        "rotationEuler": [
+          0,
+          226.75,
+          0
+        ],
+        "radius": 3,
+        "priority": 1
+      },
+      "enabledFeatures": [],
+      "trainPlacements": [
+        {
+          "cars": [
+            "REPLACE-WITH-REAL-LOCOMOTIVE-DEFINITION-ID"
+          ],
+          "track": {
+            "segmentId": "cvw-s-main-0",
+            "distance": 20,
+            "end": "A"
+          },
+          "wreck": false,
+          "oil": 1,
+          "initialFuelWaterPercent": 1
+        }
+      ],
+      "locomotiveOverrideSlot": {
+        "placementIndex": 0,
+        "carIndex": 0
+      }
+    }
+  },
+  "terrain": {
+    "placement": "RF game graph, splineys; terrain identity must come from the map editor",
+    "payload": {
+      "splineys": {
+        "cvw-terrain": {
+          "handler": "RailForge.NativeTerrainBrushes",
+          "formatVersion": 1,
+          "strokes": [
+            {
+              "operation": "flatten",
+              "terrain": "REPLACE-WITH-EXPORTED-TERRAIN-ID",
+              "centerX": -31008.959355,
+              "centerZ": -20341.499278,
+              "radius": 10,
+              "square": false,
+              "amount": 1,
+              "hardness": 0.5,
+              "targetHeight": 527.52
+            }
+          ]
+        }
+      }
+    },
+    "otherOperations": [
+      "raise",
+      "lower",
+      "round",
+      "smooth",
+      "paint",
+      "erasePaint",
+      "addTrees",
+      "removeTrees",
+      "paintGrass",
+      "eraseGrass"
+    ]
+  },
+  "infrastructure": {
+    "placement": "RF game graph; replace the existing crossing ID with an inspected target",
+    "payload": {
+      "splineys": {
+        "RF_MapInfrastructureEdits": {
+          "handler": "RailForge.MapEditor.InfrastructureOverrides",
+          "schemaVersion": 2,
+          "crossings": {
+            "REPLACE-WITH-EXISTING-CROSSING-ID": {
+              "enabled": true,
+              "segmentId": "cvw-s-main-0",
+              "distance": 40,
+              "end": "A",
+              "width": 6,
+              "whistleDistance": 100
+            }
+          },
+          "turntables": {}
+        }
+      }
+    }
+  },
+  "migrations": {
+    "placement": "RailForge/game-migrations/rename.json",
+    "payload": {
+      "waybillDestinations": {
+        "cvw-old-works.receive": "cvw-works.receive"
+      },
+      "properties": {
+        "cvw.old-setting": {
+          "to": "cvw.new-setting"
+        }
+      },
+      "carTypes": {
+        "REPLACE-OLD-TYPE": "REPLACE-NEW-TYPE"
+      }
+    }
+  },
+  "containers": {
+    "placement": "RailForge/containers/<actual-container-identifier>.json; requires an existing asset container",
+    "payload": {
+      "$objectsByIdentifier": {
+        "REPLACE-WITH-EXISTING-DEFINITION-ID": {
+          "REPLACE-WITH-PROVIDER-FIELD": "REPLACE-WITH-VERIFIED-VALUE"
+        }
+      }
+    },
+    "note": "Only the container addressing envelope is shown. No complete provider object contract is claimed; never use $objectsByIdentifier in game-graph."
+  },
+  "rollingStock": {
+    "placement": "Inside an actual rolling-stock Definition components array, subject to its owner schema",
+    "payload": [
+      {
+        "type": "ConfusingSupplements.Bodygroups",
+        "name": "cvw-details",
+        "enabled": true,
+        "groups": {
+          "lamps": {
+            "name": "Lamps",
+            "options": {
+              "standard": {
+                "name": "Standard",
+                "path": [
+                  "REPLACE-WITH-MODEL-CHILD-PATH"
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ConfusingSupplements.Refiller",
+        "name": "cvw-refiller",
+        "enabled": true,
+        "transferRate": 36000
+      },
+      {
+        "type": "IndustryRefiller",
+        "name": "cvw-industry-refiller",
+        "enabled": true,
+        "transferRate": 36000
+      },
+      {
+        "type": "CS.LiverySwap",
+        "name": "cvw-livery",
+        "enabled": true
+      }
+    ],
+    "note": "DestinationSign and LabelPrinter also belong to Definition components; exact transforms/assets depend on the real rolling-stock schema. Refer to the matrix. Livery options need livery:<definition-id> directory mixintos."
+  }
+}

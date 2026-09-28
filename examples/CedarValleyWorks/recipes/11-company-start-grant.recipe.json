@@ -1,0 +1,42 @@
+{
+  "title": "Preserve base Company start features while adding one",
+  "status": "paired-patch",
+  "prerequisites": [
+    "Define cvw-feature-base before using this recipe; the core intentionally has no such feature."
+  ],
+  "notes": [
+    "FUSE boolean dictionary merges by ID; plain array replaces. RF recipe removes an existing occurrence then appends one.",
+    "A start-granted feature is reapplied on Company load. Do not also use it in section enable/disable/available arrays.",
+    "initiallyEnabled/defaultEnableInSandbox apply to Sandbox; they do not grant a Company start.",
+    "Section-level FUSE fan-out must become an explicit RF map feature plus section reference. baseProgression must be flattened deliberately."
+  ],
+  "fuseFragment": {
+    "progression": {
+      "progressions": {
+        "ewh": {
+          "enableFeaturesAtStart": {
+            "cvw-feature-base": true
+          }
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "progressions": {
+      "ewh": {
+        "enableFeaturesAtStart": [
+          {
+            "$find": "cvw-feature-base",
+            "$optional": true,
+            "$remove": true
+          },
+          {
+            "$append": [
+              "cvw-feature-base"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

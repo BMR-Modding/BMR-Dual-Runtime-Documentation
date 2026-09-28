@@ -1,0 +1,23 @@
+{
+  "title": "Rename saved destination/property identifiers",
+  "status": "runtime-compatibility-subset",
+  "prerequisites": [
+    "Map real old save identifiers to verified new ones, then test an old save copy."
+  ],
+  "notes": [
+    "RF RailForge/game-migrations files use top-level waybillDestinations, properties and carTypes dictionaries, with scalar targets or supported target objects.",
+    "FUSE compatibility executes scalar waybillDestinations/properties only. Object-valued RF records and carTypes are not FUSE execution parity."
+  ],
+  "fuseFragment": {
+    "extensions": {
+      "gameMigrations": {
+        "waybillDestinations": {
+          "cvw-old-works.receive": "cvw-works.receive"
+        },
+        "properties": {
+          "cvw.old-setting": "cvw.new-setting"
+        }
+      }
+    }
+  }
+}

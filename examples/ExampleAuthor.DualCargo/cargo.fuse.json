@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ExampleAuthor.DualCargo.Content",
+  "name": "Dual Runtime Cargo Example",
+  "author": "Example Author",
+  "modVersion": "1.0.0",
+  "operations": {
+    "loads": {
+      "exampleauthor.crated-goods": {
+        "name": "Example Crated Goods",
+        "units": "Pounds",
+        "density": 40,
+        "unitWeightInPounds": 0,
+        "importable": true,
+        "payPerQuantity": 0,
+        "costPerUnit": 0
+      }
+    }
+  }
+}

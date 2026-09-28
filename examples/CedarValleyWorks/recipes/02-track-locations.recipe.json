@@ -1,0 +1,63 @@
+{
+  "title": "Normalized positions, distance, partial segments and metadata",
+  "status": "partial",
+  "prerequisites": [
+    "The 15 m conversion below assumes a straight 120-metre segment; measure the edited cvw-s-factory curve before applying it."
+  ],
+  "notes": [
+    "Do not use this 120-metre calculation for arbitrary curved segments. Obtain the actual segment length.",
+    "FUSE trackLocation chooses normalized OR distance, never both. RF end A/B and distance are canonical.",
+    "FUSE location offset, node isDiamond/tags and segment gauge/tags/yard/bridgeSupportsSteel lack general RF field parity.",
+    "FUSE span groupId and area spanIds/groupId likewise require a deliberate target design."
+  ],
+  "fuseFragment": {
+    "tracks": {
+      "spans": {
+        "cvw-p-factory": {
+          "upper": {
+            "segmentId": "cvw-s-factory",
+            "end": "A",
+            "normalized": 0.125
+          },
+          "lower": {
+            "segmentId": "cvw-s-factory",
+            "end": "B",
+            "normalized": 0.125
+          },
+          "normalize": true
+        }
+      },
+      "segments": {
+        "cvw-s-factory": {
+          "startNodeId": "cvw-n-f0",
+          "endNodeId": "cvw-n-f1",
+          "partial": true,
+          "preserveStyle": true,
+          "preserveTrackClass": true,
+          "preserveSpeedLimit": true,
+          "preservePriority": true,
+          "preserveGroupId": true
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "tracks": {
+      "spans": {
+        "cvw-p-factory": {
+          "upper": {
+            "segmentId": "cvw-s-factory",
+            "end": "A",
+            "distance": 15
+          },
+          "lower": {
+            "segmentId": "cvw-s-factory",
+            "end": "B",
+            "distance": 15
+          },
+          "normalize": true
+        }
+      }
+    }
+  }
+}

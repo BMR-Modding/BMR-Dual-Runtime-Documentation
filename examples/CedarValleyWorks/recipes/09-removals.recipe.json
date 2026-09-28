@@ -1,0 +1,70 @@
+{
+  "title": "Remove old graph records during a controlled upgrade",
+  "status": "paired-subset",
+  "prerequisites": [
+    "The cvw-old-* records must exist in a prior version; remove or rewrite every dependent reference first."
+  ],
+  "notes": [
+    "A component uses FUSE {\"remove\":true} or RF components.<id>: null within its known industry/area.",
+    "RF null is supported only in specific keyed materialized collections. Do not generalize to loads, features, progressions, root or scalar fields.",
+    "FUSE removals also enumerate waterSurfaces, telegraphPoles, mapLabels and sceneClones; translation depends on their owner/handler."
+  ],
+  "fuseFragment": {
+    "tracks": {
+      "removals": {
+        "spans": [
+          "cvw-old-span"
+        ],
+        "segments": [
+          "cvw-old-segment"
+        ],
+        "nodes": [
+          "cvw-old-node"
+        ]
+      }
+    },
+    "operations": {
+      "removals": {
+        "industries": [
+          "cvw-old-industry"
+        ]
+      }
+    },
+    "world": {
+      "removals": {
+        "scenery": [
+          "cvw-old-prop"
+        ],
+        "splineys": [
+          "cvw-old-road"
+        ]
+      }
+    }
+  },
+  "railforgeFragment": {
+    "tracks": {
+      "spans": {
+        "cvw-old-span": null
+      },
+      "segments": {
+        "cvw-old-segment": null
+      },
+      "nodes": {
+        "cvw-old-node": null
+      }
+    },
+    "areas": {
+      "cvw-area": {
+        "industries": {
+          "cvw-old-industry": null
+        }
+      }
+    },
+    "scenery": {
+      "cvw-old-prop": null
+    },
+    "splineys": {
+      "cvw-old-road": null
+    }
+  }
+}

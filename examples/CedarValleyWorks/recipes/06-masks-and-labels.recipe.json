@@ -1,0 +1,152 @@
+{
+  "title": "Terrain masks and richer labels",
+  "status": "partial",
+  "prerequisites": [
+    "Choose one mask shape for a given purpose; terrain changes require visual verification."
+  ],
+  "notes": [
+    "RF curve masks use positionA/rotationA/sizeA and positionB/rotationB/sizeB. Fit the intended shape; arbitrary multi-point curves cannot be copied directly.",
+    "FUSE speed style, size and color are not claimed as native RF label fields. A map label does not set track speed; segment speedLimit does."
+  ],
+  "fuseFragment": {
+    "world": {
+      "mapMasks": {
+        "cvw-mask-circle": {
+          "type": "circle",
+          "center": {
+            "x": -31003.835044,
+            "y": 527.52,
+            "z": -20405.325147
+          },
+          "radius": 15,
+          "falloff": 2,
+          "enableSetHeight": false,
+          "enableCutTrees": true,
+          "enableMaskModifier": true,
+          "maskName": "Object",
+          "order": 0
+        },
+        "cvw-mask-rectangle": {
+          "type": "rectangle",
+          "center": {
+            "x": -31003.835044,
+            "y": 527.52,
+            "z": -20405.325147
+          },
+          "size": {
+            "x": 20,
+            "y": 1,
+            "z": 40
+          },
+          "rotation": {
+            "x": 0,
+            "y": 226.75,
+            "z": 0
+          },
+          "falloff": 2,
+          "enableSetHeight": false,
+          "enableCutTrees": true,
+          "enableMaskModifier": true,
+          "maskName": "Object",
+          "order": 0
+        },
+        "cvw-mask-curve": {
+          "type": "curve",
+          "points": [
+            {
+              "x": -30967.848376,
+              "y": 527.52,
+              "z": -20385.201537
+            },
+            {
+              "x": -31040.685473,
+              "y": 527.52,
+              "z": -20453.719836
+            }
+          ],
+          "width": 6,
+          "falloff": 2,
+          "enableSetHeight": false,
+          "enableCutTrees": true,
+          "enableMaskModifier": true,
+          "maskName": "Object",
+          "order": 0
+        }
+      },
+      "mapLabels": {
+        "cvw-speed-label": {
+          "text": "5 MPH",
+          "position": {
+            "x": -30967.848376,
+            "y": 527.52,
+            "z": -20385.201537
+          },
+          "style": "speedLimit",
+          "speedLimitMph": 5,
+          "rotation": {
+            "x": 0,
+            "y": 226.75,
+            "z": 0
+          },
+          "size": 1,
+          "color": "#FFFFFFFF"
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "splineys": {
+      "cvw-mask-circle": {
+        "type": "circle",
+        "radius": 15,
+        "falloff": 2,
+        "enableSetHeight": false,
+        "enableCutTrees": true,
+        "enableMaskModifier": true,
+        "maskName": "Object",
+        "order": 0,
+        "position": {
+          "x": -31003.835044,
+          "y": 527.52,
+          "z": -20405.325147
+        },
+        "handler": "AlinasMapMod.Map.MapMaskBuilder"
+      },
+      "cvw-mask-rectangle": {
+        "type": "rectangle",
+        "size": {
+          "x": 20,
+          "y": 1,
+          "z": 40
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "falloff": 2,
+        "enableSetHeight": false,
+        "enableCutTrees": true,
+        "enableMaskModifier": true,
+        "maskName": "Object",
+        "order": 0,
+        "position": {
+          "x": -31003.835044,
+          "y": 527.52,
+          "z": -20405.325147
+        },
+        "handler": "AlinasMapMod.Map.MapMaskBuilder"
+      }
+    },
+    "mapLabels": {
+      "cvw-speed-label": {
+        "text": "5 MPH",
+        "position": {
+          "x": -30967.848376,
+          "y": 527.52,
+          "z": -20385.201537
+        }
+      }
+    }
+  }
+}

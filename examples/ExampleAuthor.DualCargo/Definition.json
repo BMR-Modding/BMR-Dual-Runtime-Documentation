@@ -1,0 +1,9 @@
+{
+  "manifestVersion": 5,
+  "id": "ExampleAuthor.DualCargo",
+  "name": "Dual Runtime Cargo Example",
+  "author": "Example Author",
+  "version": "1.0.0",
+  "requires": [],
+  "loadAfter": []
+}

@@ -1,0 +1,980 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ExampleAuthor.CedarValleyWorks.graph",
+  "name": "Cedar Valley Works",
+  "author": "Example Author",
+  "modVersion": "1.0.1",
+  "coordinateSpace": "world",
+  "description": "Fictional freight district at the user-selected Andrews site. Inspect terrain and connect to the railroad before live testing.",
+  "tags": [
+    "example",
+    "fictional",
+    "dual-runtime"
+  ],
+  "tracks": {
+    "nodes": {
+      "cvw-n-m0": {
+        "position": {
+          "x": -30746.748,
+          "y": 527.52,
+          "z": -20094.83
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-m1": {
+        "position": {
+          "x": -30746.75,
+          "y": 527.52,
+          "z": -20094.832
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-m2": {
+        "position": {
+          "x": -30805.0176,
+          "y": 527.52,
+          "z": -20149.6465
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-m3": {
+        "position": {
+          "x": -30834.1523,
+          "y": 527.52,
+          "z": -20177.0527
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": true
+      },
+      "cvw-n-m4": {
+        "position": {
+          "x": -30863.2871,
+          "y": 527.52,
+          "z": -20204.4688
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": true
+      },
+      "cvw-n-m5": {
+        "position": {
+          "x": -30928.8125,
+          "y": 527.52,
+          "z": -20266.1348
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-m6": {
+        "position": {
+          "x": -31067.229033,
+          "y": 527.52,
+          "z": -20396.313918
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-m7": {
+        "position": {
+          "x": -31165.5586,
+          "y": 527.52,
+          "z": -20488.8125
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-i0": {
+        "position": {
+          "x": -30876.9922,
+          "y": 527.52,
+          "z": -20189.8965
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-i1": {
+        "position": {
+          "x": -31008.0977,
+          "y": 527.52,
+          "z": -20313.2324
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-f0": {
+        "position": {
+          "x": -30925.01,
+          "y": 527.52,
+          "z": -20372.3613
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-f1": {
+        "position": {
+          "x": -31012.4141,
+          "y": 527.52,
+          "z": -20454.584
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-t0": {
+        "position": {
+          "x": -30967.848376,
+          "y": 527.52,
+          "z": -20385.201537
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-t1": {
+        "position": {
+          "x": -31040.685473,
+          "y": 527.52,
+          "z": -20453.719836
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-c0": {
+        "position": {
+          "x": -30895.8379,
+          "y": 527.52,
+          "z": -20228.2363
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-c1": {
+        "position": {
+          "x": -30997.8,
+          "y": 527.52,
+          "z": -20324.168
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-s0": {
+        "position": {
+          "x": -30991.1523,
+          "y": 527.52,
+          "z": -20347.4141
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-s1": {
+        "position": {
+          "x": -31043.2441,
+          "y": 527.52,
+          "z": -20421.81
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      },
+      "cvw-n-s2": {
+        "position": {
+          "x": -31059.1934,
+          "y": 527.52,
+          "z": -20412.13
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "flipSwitchStand": false
+      }
+    },
+    "segments": {
+      "cvw-s-main-0": {
+        "startNodeId": "cvw-n-m0",
+        "endNodeId": "cvw-n-m1",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-main-1": {
+        "startNodeId": "cvw-n-m1",
+        "endNodeId": "cvw-n-m2",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-main-2": {
+        "startNodeId": "cvw-n-m2",
+        "endNodeId": "cvw-n-m3",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-main-3": {
+        "startNodeId": "cvw-n-m3",
+        "endNodeId": "cvw-n-m4",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-main-4": {
+        "startNodeId": "cvw-n-m4",
+        "endNodeId": "cvw-n-m5",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-main-5": {
+        "startNodeId": "cvw-n-m5",
+        "endNodeId": "cvw-n-m6",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-main-6": {
+        "startNodeId": "cvw-n-m6",
+        "endNodeId": "cvw-n-m7",
+        "style": "standard",
+        "trackClass": "main",
+        "speedLimit": 15,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": false
+      },
+      "cvw-s-interchange-in": {
+        "startNodeId": "cvw-n-m1",
+        "endNodeId": "cvw-n-i0",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-interchange": {
+        "startNodeId": "cvw-n-i0",
+        "endNodeId": "cvw-n-i1",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-interchange-out": {
+        "startNodeId": "cvw-n-i1",
+        "endNodeId": "cvw-n-m6",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-factory-in": {
+        "startNodeId": "cvw-n-m2",
+        "endNodeId": "cvw-n-f0",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-factory": {
+        "startNodeId": "cvw-n-f0",
+        "endNodeId": "cvw-n-f1",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-team-in": {
+        "startNodeId": "cvw-n-m3",
+        "endNodeId": "cvw-n-t0",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-team": {
+        "startNodeId": "cvw-n-t0",
+        "endNodeId": "cvw-n-t1",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-construction-in": {
+        "startNodeId": "cvw-n-m4",
+        "endNodeId": "cvw-n-c0",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-construction": {
+        "startNodeId": "cvw-n-c0",
+        "endNodeId": "cvw-n-c1",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-base-track",
+        "bridgeSupportsSteel": false,
+        "yard": true
+      },
+      "cvw-s-service-in": {
+        "startNodeId": "cvw-n-m5",
+        "endNodeId": "cvw-n-s0",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-service-track",
+        "bridgeSupportsSteel": false,
+        "yard": true,
+        "gauge": "Standard"
+      },
+      "cvw-s-repair": {
+        "startNodeId": "cvw-n-s0",
+        "endNodeId": "cvw-n-s1",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-service-track",
+        "bridgeSupportsSteel": false,
+        "yard": true,
+        "gauge": "Standard"
+      },
+      "cvw-s-fuel": {
+        "startNodeId": "cvw-n-s0",
+        "endNodeId": "cvw-n-s2",
+        "style": "yard",
+        "trackClass": "industrial",
+        "speedLimit": 5,
+        "priority": 0,
+        "groupId": "cvw-service-track",
+        "bridgeSupportsSteel": false,
+        "yard": true,
+        "gauge": "Standard"
+      }
+    },
+    "spans": {
+      "cvw-p-interchange": {
+        "upper": {
+          "segmentId": "cvw-s-interchange",
+          "end": "A",
+          "distance": 15
+        },
+        "lower": {
+          "segmentId": "cvw-s-interchange",
+          "end": "B",
+          "distance": 20
+        },
+        "normalize": true
+      },
+      "cvw-p-factory": {
+        "upper": {
+          "segmentId": "cvw-s-factory",
+          "end": "A",
+          "distance": 15
+        },
+        "lower": {
+          "segmentId": "cvw-s-factory",
+          "end": "B",
+          "distance": 15
+        },
+        "normalize": true
+      },
+      "cvw-p-team": {
+        "upper": {
+          "segmentId": "cvw-s-team",
+          "end": "A",
+          "distance": 10
+        },
+        "lower": {
+          "segmentId": "cvw-s-team",
+          "end": "B",
+          "distance": 15
+        },
+        "normalize": true
+      },
+      "cvw-p-construction": {
+        "upper": {
+          "segmentId": "cvw-s-construction",
+          "end": "A",
+          "distance": 10
+        },
+        "lower": {
+          "segmentId": "cvw-s-construction",
+          "end": "B",
+          "distance": 15
+        },
+        "normalize": true
+      },
+      "cvw-p-repair": {
+        "upper": {
+          "segmentId": "cvw-s-repair",
+          "end": "A",
+          "distance": 10
+        },
+        "lower": {
+          "segmentId": "cvw-s-repair",
+          "end": "B",
+          "distance": 15
+        },
+        "normalize": true
+      },
+      "cvw-p-fuel": {
+        "upper": {
+          "segmentId": "cvw-s-fuel",
+          "end": "A",
+          "distance": 10
+        },
+        "lower": {
+          "segmentId": "cvw-s-fuel",
+          "end": "B",
+          "distance": 15
+        },
+        "normalize": true
+      }
+    },
+    "areas": {
+      "cvw-area": {
+        "name": "Cedar Valley",
+        "position": {
+          "x": -31008.959355,
+          "y": 527.52,
+          "z": -20341.499278
+        },
+        "radius": 300,
+        "tagColor": [
+          0.34,
+          0.61,
+          0.39,
+          1
+        ],
+        "order": 90
+      }
+    }
+  },
+  "operations": {
+    "loads": {
+      "cvw.unfinished-crates": {
+        "name": "Unfinished Crates",
+        "units": "Pounds",
+        "density": 40,
+        "unitWeightInPounds": 0,
+        "importable": true,
+        "payPerQuantity": 0,
+        "costPerUnit": 0
+      },
+      "cvw.finished-crates": {
+        "name": "Finished Crates",
+        "units": "Pounds",
+        "density": 40,
+        "unitWeightInPounds": 0,
+        "importable": false,
+        "payPerQuantity": 0,
+        "costPerUnit": 0
+      }
+    },
+    "industries": {
+      "cvw-interchange": {
+        "name": "Cedar Valley Interchange",
+        "areaId": "cvw-area",
+        "position": {
+          "x": -20.55549,
+          "y": 0,
+          "z": 21.851129
+        },
+        "usesContract": false,
+        "components": {
+          "exchange": {
+            "type": "interchange",
+            "name": "Cedar Valley Interchange",
+            "trackSpanIds": [
+              "cvw-p-interchange"
+            ]
+          }
+        }
+      },
+      "cvw-works": {
+        "name": "Cedar Valley Crate Works",
+        "areaId": "cvw-area",
+        "position": {
+          "x": 5.98807,
+          "y": 0,
+          "z": -35.554789
+        },
+        "usesContract": true,
+        "components": {
+          "receive": {
+            "type": "unloader",
+            "name": "Crate Receiving",
+            "trackSpanIds": [
+              "cvw-p-factory"
+            ],
+            "loadId": "cvw.unfinished-crates",
+            "carTypeFilter": "XM*",
+            "sharedStorage": true,
+            "storageChangeRate": 0,
+            "maxStorage": 120000,
+            "carTransferRate": 60000,
+            "orderAroundEmpties": true,
+            "orderAroundLoaded": true
+          },
+          "finish": {
+            "type": "formulaic",
+            "name": "Crate Finishing",
+            "sharedStorage": true,
+            "inputTermsPerDay": {
+              "cvw.unfinished-crates": 20000
+            },
+            "outputTermsPerDay": {
+              "cvw.finished-crates": 20000
+            }
+          },
+          "ship": {
+            "type": "loader",
+            "name": "Finished Crates",
+            "trackSpanIds": [
+              "cvw-p-factory"
+            ],
+            "loadId": "cvw.finished-crates",
+            "carTypeFilter": "XM*",
+            "sharedStorage": true,
+            "storageChangeRate": 0,
+            "maxStorage": 120000,
+            "carTransferRate": 60000,
+            "orderAroundEmpties": true,
+            "orderAroundLoaded": true
+          },
+          "construction": {
+            "type": "progression",
+            "name": "Service Yard Construction",
+            "trackSpanIds": [
+              "cvw-p-construction"
+            ],
+            "carTypeFilter": "XM*,FM*",
+            "sharedStorage": false
+          }
+        }
+      },
+      "cvw-team": {
+        "name": "Cedar Valley Team Track",
+        "areaId": "cvw-area",
+        "position": {
+          "x": 4.692431,
+          "y": 0,
+          "z": -77.961408
+        },
+        "usesContract": true,
+        "components": {
+          "public": {
+            "type": "teamTrack",
+            "name": "Public Freight Platform",
+            "trackSpanIds": [
+              "cvw-p-team"
+            ],
+            "teamProfiles": {
+              "crate-receipts": {
+                "loadId": "cvw.unfinished-crates",
+                "isExport": false,
+                "loadingTimeDays": 1,
+                "carTypeFilter": "XM*"
+              },
+              "crate-exports": {
+                "loadId": "cvw.finished-crates",
+                "isExport": true,
+                "loadingTimeDays": 1,
+                "carTypeFilter": "XM*"
+              }
+            }
+          }
+        }
+      },
+      "cvw-service": {
+        "name": "Cedar Valley Engine Service",
+        "areaId": "cvw-area",
+        "position": {
+          "x": -87.836396,
+          "y": 0,
+          "z": -96.357498
+        },
+        "usesContract": false,
+        "components": {
+          "repair": {
+            "type": "repairTrack",
+            "name": "Cedar Valley Repair Track",
+            "trackSpanIds": [
+              "cvw-p-repair"
+            ],
+            "loadId": "repair-parts",
+            "carTypeFilter": "*",
+            "sharedStorage": true,
+            "canOverhaul": true
+          },
+          "parts": {
+            "type": "unloader",
+            "name": "Service Parts",
+            "trackSpanIds": [
+              "cvw-p-repair"
+            ],
+            "loadId": "repair-parts",
+            "carTypeFilter": "XM*",
+            "sharedStorage": true,
+            "storageChangeRate": 0,
+            "maxStorage": 100000,
+            "carTransferRate": 60000,
+            "orderAroundEmpties": false,
+            "orderAroundLoaded": false
+          },
+          "coal": {
+            "type": "unloader",
+            "name": "Service Coal",
+            "trackSpanIds": [
+              "cvw-p-fuel"
+            ],
+            "loadId": "coal",
+            "carTypeFilter": "HM*,HT*",
+            "sharedStorage": true,
+            "storageChangeRate": 0,
+            "maxStorage": 40000,
+            "carTransferRate": 60000,
+            "orderAroundEmpties": false,
+            "orderAroundLoaded": false
+          },
+          "diesel": {
+            "type": "unloader",
+            "name": "Service Diesel",
+            "trackSpanIds": [
+              "cvw-p-fuel"
+            ],
+            "loadId": "diesel-fuel",
+            "carTypeFilter": "TM*",
+            "sharedStorage": true,
+            "storageChangeRate": 0,
+            "maxStorage": 16000,
+            "carTransferRate": 60000,
+            "orderAroundEmpties": false,
+            "orderAroundLoaded": false
+          }
+        }
+      }
+    },
+    "loaders": {
+      "cvw-loader-water": {
+        "position": {
+          "x": -31097.659511,
+          "y": 527.52,
+          "z": -20466.127856
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "prefab": "vanilla://waterColumn",
+        "industryId": "cvw-service"
+      },
+      "cvw-loader-coal": {
+        "position": {
+          "x": -31058.5918,
+          "y": 527.776855,
+          "z": -20400.15
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "prefab": "vanilla://coalConveyor",
+        "industryId": "cvw-service"
+      },
+      "cvw-loader-diesel": {
+        "position": {
+          "x": -31131.91866,
+          "y": 527.52,
+          "z": -20429.709308
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "prefab": "vanilla://dieselFuelingStand",
+        "industryId": "cvw-service"
+      }
+    }
+  },
+  "world": {
+    "scenery": {
+      "cvw-scenery-works": {
+        "assetIdentifier": "scenery://freight-house-general",
+        "position": {
+          "x": -31003.835044,
+          "y": 527.52,
+          "z": -20405.325147
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      },
+      "cvw-scenery-service": {
+        "assetIdentifier": "scenery://brick-substation-medium",
+        "position": {
+          "x": -31083.955851,
+          "y": 527.52,
+          "z": -20480.695275
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "mapLabels": {
+      "cvw-label": {
+        "text": "Cedar Valley",
+        "position": {
+          "x": -31038.094194,
+          "y": 527.52,
+          "z": -20368.906598
+        }
+      }
+    },
+    "sceneClones": {
+      "scene-V29ybGQvTG9hZGVycy9jdnctbG9hZGVyLXdhdGVy": {
+        "targetPath": "World/Loaders/cvw-loader-water",
+        "localPosition": {
+          "x": -31097.66,
+          "y": 526.420044,
+          "z": -20467.127
+        },
+        "localRotation": {
+          "x": 0.0,
+          "y": 226.75,
+          "z": 0.0
+        },
+        "localScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "enabled": true
+      },
+      "scene-V29ybGQvTG9hZGVycy9jdnctbG9hZGVyLWNvYWw": {
+        "targetPath": "World/Loaders/cvw-loader-coal",
+        "localPosition": {
+          "x": -31026.752,
+          "y": 527.295,
+          "z": -20378.3379
+        },
+        "localRotation": {
+          "x": 0.0,
+          "y": 136.749985,
+          "z": 0.0
+        },
+        "localScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "enabled": true
+      }
+    }
+  },
+  "progression": {
+    "progressions": {
+      "ewh": {
+        "sections": {
+          "cvw-build-service": {
+            "displayName": "Build Cedar Valley Engine Service",
+            "description": "Deliver construction supplies at the existing construction siding.",
+            "prerequisiteSectionIds": [],
+            "enableFeaturesOnUnlock": [
+              "cvw-feature-service"
+            ],
+            "disableFeaturesOnUnlock": [],
+            "enableFeaturesOnAvailable": [],
+            "deliveryPhases": [
+              {
+                "cost": 2500,
+                "industryComponentId": "cvw-works.construction",
+                "deliveries": [
+                  {
+                    "carTypeFilter": "XM*",
+                    "loadId": "building-supplies",
+                    "count": 2,
+                    "direction": "loadToIndustry",
+                    "destinationIndustryId": "cvw-works"
+                  },
+                  {
+                    "carTypeFilter": "FM*",
+                    "loadId": "rails",
+                    "count": 2,
+                    "direction": "loadToIndustry",
+                    "destinationIndustryId": "cvw-works"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "mapFeatures": {
+      "cvw-feature-service": {
+        "displayName": "Cedar Valley Engine Service",
+        "description": "Repair and fuel facilities for the district.",
+        "initiallyEnabled": false,
+        "trackGroupsEnableOnUnlock": [
+          "cvw-service-track"
+        ],
+        "trackGroupsAvailableOnUnlock": [
+          "cvw-service-track"
+        ],
+        "gameObjectsEnableOnUnlock": [
+          "cvw-scenery-service",
+          "cvw-loader-water",
+          "cvw-loader-coal",
+          "cvw-loader-diesel"
+        ],
+        "unlockIncludeIndustries": [
+          "cvw-service"
+        ],
+        "unlockIncludeIndustryComponents": []
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Catalog-only parts and sibling asset references",
+  "status": "RF-DELTA45-discovery",
+  "prerequisites": [
+    "Provide a real Unity-exported Catalog.json and matching nonempty Bundle. This recipe does not contain a bundle.",
+    "The new standalone-discovery path examines a data package root and its immediate child folders; normal native asset-pack roots have their own discovery path."
+  ],
+  "notes": [
+    "Example layout: Your.Mod/MainAssets/{Catalog.json,Definitions.json,Bundle} and Your.Mod/Parts/{Catalog.json,Bundle}. Parts does not need a dummy Definitions.json for the new RF standalone path.",
+    "Catalog identifier and assets object must be nonempty. Optional name/type/filename fields must have accepted types; a Bundle must exist directly in the same folder and be nonempty. Symbolic/link paths are rejected by this path.",
+    "Sibling fallback uses the requested catalog identifier in the same physical parent under the active Mods root, among registered stores in validation scope. Multiple matches fail closed.",
+    "Use the AssetReference specimen only inside an actual asset Definition field that expects that object; it is not the game-graph modelIdentifier syntax.",
+    "FUSE's own asset-pack registration and dependency rules remain separate. Successful RF scanning is not successful Unity bundle loading."
+  ],
+  "catalogExample": {
+    "identifier": "CedarValleyParts",
+    "name": "Cedar Valley Parts",
+    "shared": false,
+    "assets": {
+      "cvw-oil-valve": {
+        "name": "CVW Oil Valve",
+        "type": "GameObject",
+        "filename": "Assets/CedarValley/OilValve.prefab"
+      }
+    }
+  },
+  "assetReferenceExample": {
+    "assetPackIdentifier": "CedarValleyParts",
+    "assetIdentifier": "cvw-oil-valve"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Bunker C purchases and engine-service storage",
+  "status": "paired-freight-with-RF-specific-refueling",
+  "prerequisites": [
+    "Apply after the core; reuse an existing compatible bunker-c cargo if another provider owns it.",
+    "DELTA45 refueling/steam behavior depends on enabled materializers, valid fuel slots and compatible hooks. FUSE locomotive oil consumption needs separately verified support."
+  ],
+  "notes": [
+    "The paired fragments define freight and storage in both graph formats. They do not implement locomotive fuel simulation in FUSE.",
+    "Use exact load ID bunker-c. A positive authored price is preserved by RF; absent/null/zero is replaced by the 0.12 fallback. Wrong units, nonpositive density or importable:false hold automatic purchasing.",
+    "The explicit cvw-oil-supply component prevents RF from adding a duplicate automatic supplier. Do not author RF's managed bmr-universal-bunker-c ID or generated -rf-bunker-c receiver suffix.",
+    "The core's bare interchange alone is not eligible for automatic purchasing: DELTA45 also needs an existing InterchangedIndustryLoader purchase supplier and valid interchange spans.",
+    "For an automatic-RF alternative, add an ordinary diesel purchase supplier instead and let DELTA45 own the added oil supplier. That automatic behavior is not FUSE parity.",
+    "The service milestone still gates cvw-service. Buy a tank car, unload bunker-c into that industry's shared storage, then test the existing diesel stand with a compatible oil slot. Empty storage must not provide free fuel.",
+    "Do not add a new bunkerFuel or oilSteam graph root: DELTA45 implements these as runtime compatibility services, not new authoring namespaces."
+  ],
+  "fuseFragment": {
+    "operations": {
+      "loads": {
+        "bunker-c": {
+          "name": "Bunker C",
+          "units": "Gallons",
+          "density": 65,
+          "unitWeightInPounds": 0,
+          "importable": true,
+          "payPerQuantity": 0,
+          "costPerUnit": 0.12
+        }
+      },
+      "industries": {
+        "cvw-interchange": {
+          "name": "Cedar Valley Interchange",
+          "areaId": "cvw-area",
+          "position": {
+            "x": -20.55549,
+            "y": 0,
+            "z": 21.851129
+          },
+          "components": {
+            "cvw-oil-supply": {
+              "type": "interchangedLoader",
+              "name": "Cedar Valley Oil Supply",
+              "trackSpanIds": [
+                "cvw-p-interchange"
+              ],
+              "loadId": "bunker-c",
+              "carTypeFilter": "TM",
+              "carLoadPeriod": 1,
+              "carLengthFeet": 50
+            }
+          }
+        },
+        "cvw-service": {
+          "name": "Cedar Valley Engine Service",
+          "areaId": "cvw-area",
+          "position": {
+            "x": -87.836396,
+            "y": 0,
+            "z": -96.357498
+          },
+          "components": {
+            "cvw-oil-receive": {
+              "type": "unloader",
+              "name": "Cedar Valley Bunker C Receiving",
+              "trackSpanIds": [
+                "cvw-p-fuel"
+              ],
+              "loadId": "bunker-c",
+              "carTypeFilter": "TM",
+              "sharedStorage": true,
+              "storageChangeRate": 0,
+              "maxStorage": 16000,
+              "carTransferRate": 60000,
+              "orderAroundEmpties": false,
+              "orderAroundLoaded": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "loads": {
+      "bunker-c": {
+        "units": "Gallons",
+        "density": 65,
+        "unitWeightInPounds": 0,
+        "importable": true,
+        "payPerQuantity": 0,
+        "costPerUnit": 0.12,
+        "description": "Bunker C"
+      }
+    },
+    "areas": {
+      "cvw-area": {
+        "industries": {
+          "cvw-interchange": {
+            "components": {
+              "cvw-oil-supply": {
+                "type": "Model.Ops.InterchangedIndustryLoader",
+                "name": "Cedar Valley Oil Supply",
+                "loadId": "bunker-c",
+                "carTypeFilter": "TM",
+                "carLoadPeriod": 1,
+                "carLengthFeet": 50,
+                "trackSpans": [
+                  "cvw-p-interchange"
+                ]
+              }
+            }
+          },
+          "cvw-service": {
+            "components": {
+              "cvw-oil-receive": {
+                "type": "Model.Ops.IndustryUnloader",
+                "name": "Cedar Valley Bunker C Receiving",
+                "loadId": "bunker-c",
+                "carTypeFilter": "TM",
+                "sharedStorage": true,
+                "storageChangeRate": 0,
+                "maxStorage": 16000,
+                "carTransferRate": 60000,
+                "orderAroundEmpties": false,
+                "orderAroundLoaded": false,
+                "trackSpans": [
+                  "cvw-p-fuel"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

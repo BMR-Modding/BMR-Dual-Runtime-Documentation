@@ -1,0 +1,61 @@
+{
+  "title": "Whistle, horn and bell catalogs",
+  "status": "requires-assets-schema-exception",
+  "prerequisites": [
+    "Supply your own licensed audio files; none are shipped. This recipe uses working package-relative paths; the public URI-only schema rejects them."
+  ],
+  "notes": [
+    "FUSE schema requires URI-shaped strings, but installed FUSE SHA256 9A30D165... resolves file://Audio incorrectly. Relative Audio/... and file(Audio/...) resolve correctly; tested 2026-09-21 without loading audio.",
+    "RF uses three catalog ARRAY files declared under manifest mixintos.whistles/horns/bells; these are not graph roots.",
+    "RF horn keys rename t to time; FUSE whistle pitch/lerp fields lack RF catalog equivalents.",
+    "Use package-relative Audio/cvw-*.wav paths in RF catalogs. Horns allow one or two layers; ordered keyframe times/values are fractions; bell index times are positive and increasing."
+  ],
+  "fuseFragment": {
+    "audio": {
+      "whistles": {
+        "cvw-whistle": {
+          "name": "Cedar Valley Whistle",
+          "clip": "Audio/cvw-whistle.wav",
+          "rampUpPitch": 0.1,
+          "lerpSpeed": 1,
+          "airLerpSpeed": 1
+        }
+      },
+      "horns": {
+        "cvw-horn": {
+          "name": "Cedar Valley Horn",
+          "layers": [
+            {
+              "file": "Audio/cvw-horn.wav",
+              "keyframes": [
+                {
+                  "t": 0,
+                  "value": 0
+                },
+                {
+                  "t": 0.2,
+                  "value": 1
+                },
+                {
+                  "t": 1,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "bells": {
+        "cvw-bell": {
+          "name": "Cedar Valley Bell",
+          "file": "Audio/cvw-bell.wav",
+          "indexTimes": [
+            0.2,
+            0.7
+          ]
+        }
+      }
+    }
+  },
+  "schemaStatus": "known-audio-path-mismatch"
+}

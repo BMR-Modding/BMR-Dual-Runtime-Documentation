@@ -1,0 +1,144 @@
+{
+  "title": "FUSE settings, feature rules and optional provider fragments",
+  "status": "partial",
+  "prerequisites": [
+    "Settings/rules belong in the SAME FUSE document as the objects they filter. Optional requirements must match real package IDs."
+  ],
+  "notes": [
+    "There is no verified native RF graph settings/featureRules equivalent; use an adapter or explicit package variant.",
+    "For conditional fragments, add top-level mixinto {target:\"game-graph\", requires:[{id:\"ExampleAuthor.OptionalAssets\",notBefore:\"1.0.0\"}]} and list the file in FuseDataFiles.",
+    "RF Definition.json mixintos.game-graph can contain {mixinto:\"file(RailForge/conditional/optional.json)\",requires:[{id:\"ExampleAuthor.OptionalAssets\",notBefore:\"1.0.0\"}]}. Keep that payload outside RailForge/game-graph.",
+    "Fragment-scoped conflictsWith skip that fragment. Package-wide requirements have different effects. Never require both runtimes."
+  ],
+  "fuseFragment": {
+    "settings": {
+      "showWarehouse": {
+        "type": "bool",
+        "label": "Show warehouse",
+        "scope": "user",
+        "default": true,
+        "reloadRequired": true
+      }
+    },
+    "featureRules": {
+      "warehouse-rule": {
+        "setting": "showWarehouse",
+        "operator": "equals",
+        "value": true,
+        "targets": {
+          "scenery": [
+            "cvw-optional-warehouse"
+          ]
+        }
+      }
+    },
+    "world": {
+      "scenery": {
+        "cvw-optional-warehouse": {
+          "assetIdentifier": "scenery://freight-house-general",
+          "position": {
+            "x": -30976.859605,
+            "y": 527.52,
+            "z": -20448.595525
+          },
+          "rotation": {
+            "x": 0,
+            "y": 226.75,
+            "z": 0
+          }
+        }
+      }
+    }
+  },
+  "conditionalExample": {
+    "note": "Alternative to the setting-driven fragment above. Provider IDs are fictional conditions to replace, not bundled mods.",
+    "infoFragment": {
+      "FuseDataFiles": [
+        "game-graph.fuse.json",
+        "optional.fuse.json"
+      ]
+    },
+    "definitionFragment": {
+      "mixintos": {
+        "game-graph": [
+          {
+            "mixinto": "file(RailForge/conditional/optional.json)",
+            "requires": [
+              {
+                "id": "ExampleAuthor.OptionalAssets",
+                "notBefore": "1.0.0"
+              }
+            ],
+            "conflictsWith": [
+              {
+                "id": "ExampleAuthor.ConflictingLayout"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fuseFile": {
+      "path": "optional.fuse.json",
+      "payload": {
+        "schemaVersion": "1.0",
+        "id": "ExampleAuthor.CedarValleyWorks.optional",
+        "name": "Optional Cedar Valley Warehouse",
+        "author": "Example Author",
+        "modVersion": "1.1.0",
+        "coordinateSpace": "world",
+        "mixinto": {
+          "target": "game-graph",
+          "requires": [
+            {
+              "id": "ExampleAuthor.OptionalAssets",
+              "notBefore": "1.0.0"
+            }
+          ],
+          "conflictsWith": [
+            {
+              "id": "ExampleAuthor.ConflictingLayout"
+            }
+          ]
+        },
+        "world": {
+          "scenery": {
+            "cvw-optional-warehouse": {
+              "assetIdentifier": "scenery://freight-house-general",
+              "position": {
+                "x": -30976.859605,
+                "y": 527.52,
+                "z": -20448.595525
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "railforgeFile": {
+      "path": "RailForge/conditional/optional.json",
+      "payload": {
+        "scenery": {
+          "cvw-optional-warehouse": {
+            "modelIdentifier": "freight-house-general",
+            "position": {
+              "x": -30976.859605,
+              "y": 527.52,
+              "z": -20448.595525
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

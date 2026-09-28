@@ -1,0 +1,62 @@
+{
+  "title": "Turntable and roundhouse",
+  "status": "paired-builder",
+  "prerequisites": [
+    "Inspect generated helper-node IDs and connect the approach after building; this recipe supplies no fabricated attachment IDs."
+  ],
+  "notes": [
+    "No roundhouse: omit FUSE roundhouse; still emit RF roundhouseStalls: 0 and a valid roundhouseTrackLength.",
+    "Portable subset: radius 5-50, even subdivisions 4-32. Legacy IDs, custom visuals, controller, startAngle and stallAngle need separate implementation."
+  ],
+  "fuseFragment": {
+    "operations": {
+      "turntables": {
+        "cvw-turntable": {
+          "position": {
+            "x": -31144.787684,
+            "y": 527.52,
+            "z": -20503.596981
+          },
+          "rotation": {
+            "x": 0,
+            "y": 226.75,
+            "z": 0
+          },
+          "radius": 15,
+          "subdivisions": 16,
+          "roundhouse": {
+            "stalls": 3,
+            "trackLength": 46,
+            "startPrefab": "vanilla://roundhouseStart",
+            "endPrefab": "vanilla://roundhouseEnd",
+            "stallPrefab": "vanilla://roundhouseStall"
+          }
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "splineys": {
+      "cvw-turntable": {
+        "handler": "AlinasMapMod.Turntable.TurntableBuilder",
+        "position": {
+          "x": -31144.787684,
+          "y": 527.52,
+          "z": -20503.596981
+        },
+        "rotation": {
+          "x": 0,
+          "y": 226.75,
+          "z": 0
+        },
+        "radius": 15,
+        "subdivisions": 16,
+        "roundhouseStalls": 3,
+        "roundhouseTrackLength": 46,
+        "startPrefab": "vanilla://roundhouseStart",
+        "endPrefab": "vanilla://roundhouseEnd",
+        "stallPrefab": "vanilla://roundhouseStall"
+      }
+    }
+  }
+}

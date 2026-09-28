@@ -1,0 +1,306 @@
+{
+  "title": "Road, river, trestle, object line and water polygon",
+  "status": "partial",
+  "prerequisites": [
+    "Replace profile/material/prefab names from a verified loaded catalog; fit the terrain."
+  ],
+  "notes": [
+    "FUSE terrainRoad/waterfall/fence/retainingWall and object-line alias are covered in the field atlas. A loaded handler's own contract determines RF support.",
+    "The object-line house is an obvious teaching asset, not a useful fence. Replace it with a suitable catalog model; use exactly one of assetIdentifier or prefab.",
+    "FUSE waterSurfaces has no verified RF native pair. RF terrain brushes are not an equivalent lake generator.",
+    "Handlerless RF points only replace one unambiguous existing AutoTrestle or RiverPath; they do not create any arbitrary spline."
+  ],
+  "fuseFragment": {
+    "world": {
+      "splineys": {
+        "cvw-road": {
+          "type": "road",
+          "profile": "REPLACE-WITH-LOADED-ROAD-PROFILE",
+          "style": "Road",
+          "offsetY": -0.1,
+          "points": [
+            {
+              "position": {
+                "x": -30940.441056,
+                "y": 527.52,
+                "z": -20414.336375
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            },
+            {
+              "position": {
+                "x": -31027.845573,
+                "y": 527.52,
+                "z": -20496.558334
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            }
+          ]
+        },
+        "cvw-river": {
+          "type": "river",
+          "profile": "REPLACE-WITH-LOADED-RIVER-PROFILE",
+          "offsetY": -0.1,
+          "points": [
+            {
+              "position": {
+                "x": -30940.441056,
+                "y": 527.52,
+                "z": -20414.336375
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            },
+            {
+              "position": {
+                "x": -31027.845573,
+                "y": 527.52,
+                "z": -20496.558334
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            }
+          ]
+        },
+        "cvw-trestle": {
+          "type": "trestle",
+          "headStyle": "REPLACE-WITH-VERIFIED-STYLE",
+          "tailStyle": "REPLACE-WITH-VERIFIED-STYLE",
+          "points": [
+            {
+              "position": {
+                "x": -30940.441056,
+                "y": 527.52,
+                "z": -20414.336375
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            },
+            {
+              "position": {
+                "x": -31027.845573,
+                "y": 527.52,
+                "z": -20496.558334
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            }
+          ]
+        },
+        "cvw-object-line": {
+          "type": "objectLine",
+          "assetIdentifier": "scenery://freight-house-general",
+          "spacing": 25,
+          "instanceScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "rotationOffset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "lateralOffset": 0,
+          "verticalOffset": 0,
+          "snapToTerrain": true,
+          "alignToSlope": false,
+          "placeAtEnd": true,
+          "maximumInstances": 32,
+          "points": [
+            {
+              "position": {
+                "x": -30940.441056,
+                "y": 527.52,
+                "z": -20414.336375
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            },
+            {
+              "position": {
+                "x": -31027.845573,
+                "y": 527.52,
+                "z": -20496.558334
+              },
+              "rotation": {
+                "x": 0,
+                "y": 226.75,
+                "z": 0
+              },
+              "width": 5
+            }
+          ]
+        }
+      },
+      "waterSurfaces": {
+        "cvw-pond": {
+          "points": [
+            {
+              "x": -30906.181907,
+              "y": 526.52,
+              "z": -20450.754924
+            },
+            {
+              "x": -30923.311481,
+              "y": 526.52,
+              "z": -20432.54565
+            },
+            {
+              "x": -30945.16261,
+              "y": 526.52,
+              "z": -20453.101139
+            },
+            {
+              "x": -30928.033036,
+              "y": 526.52,
+              "z": -20471.310414
+            }
+          ],
+          "lockHeight": true,
+          "snapToTerrain": false,
+          "enableCollider": true,
+          "uvScale": 1,
+          "triangleDensity": 0.2,
+          "maximumTriangleArea": 50,
+          "yOffset": 0
+        }
+      }
+    }
+  },
+  "railforgeFragment": {
+    "splineys": {
+      "cvw-road": {
+        "handler": "RailForge.FlowyThingBuilder",
+        "profile": "REPLACE-WITH-LOADED-ROAD-PROFILE",
+        "style": "Road",
+        "offsetY": -0.1,
+        "points": [
+          {
+            "position": {
+              "x": -30940.441056,
+              "y": 527.52,
+              "z": -20414.336375
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            },
+            "width": 5
+          },
+          {
+            "position": {
+              "x": -31027.845573,
+              "y": 527.52,
+              "z": -20496.558334
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            },
+            "width": 5
+          }
+        ]
+      },
+      "cvw-river": {
+        "handler": "RailForge.FlowyThingBuilder",
+        "profile": "REPLACE-WITH-LOADED-RIVER-PROFILE",
+        "style": "River",
+        "offsetY": -0.1,
+        "points": [
+          {
+            "position": {
+              "x": -30940.441056,
+              "y": 527.52,
+              "z": -20414.336375
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            },
+            "width": 5
+          },
+          {
+            "position": {
+              "x": -31027.845573,
+              "y": 527.52,
+              "z": -20496.558334
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            },
+            "width": 5
+          }
+        ]
+      },
+      "cvw-trestle": {
+        "handler": "AutoTrestle",
+        "headStyle": "REPLACE-WITH-VERIFIED-STYLE",
+        "tailStyle": "REPLACE-WITH-VERIFIED-STYLE",
+        "points": [
+          {
+            "position": {
+              "x": -30940.441056,
+              "y": 527.52,
+              "z": -20414.336375
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            },
+            "width": 5
+          },
+          {
+            "position": {
+              "x": -31027.845573,
+              "y": 527.52,
+              "z": -20496.558334
+            },
+            "rotation": {
+              "x": 0,
+              "y": 226.75,
+              "z": 0
+            },
+            "width": 5
+          }
+        ]
+      }
+    }
+  }
+}

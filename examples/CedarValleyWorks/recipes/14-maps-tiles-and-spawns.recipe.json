@@ -1,0 +1,46 @@
+{
+  "title": "Selectable map, tiles and global spawn points",
+  "status": "partial-package-layout",
+  "prerequisites": [
+    "Create real map metadata/tiles before using map or mapTiles; declaring map can suppress the base world."
+  ],
+  "notes": [
+    "RF has no matching selectable-map graph root. Its tile candidate is Maps/<active-map-directory>/tile_<x>_<y>.data, with exact required PNG encoding; a renamed arbitrary image is not sufficient.",
+    "RF root spawn-points.json is {\"title\": \"Cedar Valley\", \"spawnPoints\": [{\"name\": \"Cedar Valley\", \"position\": {\"x\": -30974.700206, \"y\": 527.52, \"z\": -20377.917827}}]}. Package discovery must be anchored by an editable game-graph file mixinto.",
+    "RF global points fix radius 3 and priority Int32.MinValue; FUSE rotation/priority are not portable. Company playerSpawn is a separate format."
+  ],
+  "fuseFragment": {
+    "map": {
+      "displayName": "Cedar Valley Test Map",
+      "description": "Isolated authoring map",
+      "mapFolder": "Maps/CedarValley",
+      "suppressBaseWorld": true
+    },
+    "world": {
+      "mapTiles": {
+        "cvw-tiles": {
+          "directory": "CedarValley",
+          "sourceFolder": "Maps/CedarValley",
+          "priority": 10
+        }
+      },
+      "spawnPoints": [
+        {
+          "name": "Cedar Valley",
+          "position": {
+            "x": -30974.700206,
+            "y": 527.52,
+            "z": -20377.917827
+          },
+          "rotation": {
+            "x": 0,
+            "y": 226.75,
+            "z": 0
+          },
+          "radius": 3,
+          "priority": 1
+        }
+      ]
+    }
+  }
+}

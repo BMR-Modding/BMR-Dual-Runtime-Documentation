@@ -1,7 +1,7 @@
 {
-  "description": "Cedar Valley Works entrance at the user-selected flat open site near Andrews.",
+  "description": "Cedar Valley Works entrance at the flat open site near Andrews.",
   "sourceNodeId": "N_BMR_ARR_KCM_004",
-  "source": "User-supplied Tile Editor screenshot; node is a placement reference, not a declared package dependency or automatic connection.",
+  "source": "Tile Editor screenshot; node is a placement reference, not a declared package dependency or automatic connection.",
   "entranceNodeId": "cvw-n-m0",
   "position": {
     "x": -30892.42,

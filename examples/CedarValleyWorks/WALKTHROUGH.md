@@ -173,7 +173,7 @@ The example patches `progressions.ewh.sections`. It neither replaces the base se
 
 The service phase costs 2,500 and requests two carloads of building supplies and two of rails at `cvw-p-construction`. The original S-shaped siding had no special operational meaning: its identity and span binding provide the function. After completion, the track remains while the phase-owned construction component retires.
 
-The user's screenshot shows **Map Features → Cedar Valley Engine Service** enabled. That demonstrates the visible expansion, not completion of the delivery/payment milestone or persistence after reload.
+The screenshot shows **Map Features → Cedar Valley Engine Service** enabled. That demonstrates the visible expansion, not completion of the delivery/payment milestone or persistence after reload.
 
 FUSE phase reference:
 

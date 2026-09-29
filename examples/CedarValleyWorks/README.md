@@ -77,4 +77,4 @@ The [DELTA45 review](../../Duality%20mode%20documentation/RailForge-DELTA45-Upda
 
 The graph passes schema and reference checks. Installed FUSE and RailForge select their own files; FUSE deserializes the core; RailForge merges the graph and passes all 12 patch fixtures. The atlas's 432 field values are schema-checked individually.
 
-User screenshots show tracks/scenery rendering and the service feature enabled; the user also found service-fixture editing under **Objects**. These observations do not establish completed construction deliveries, freight generation, refueling, save/reload or both-runtime gameplay. The revised entrance and normalized loader records have offline validation only. See [Validation](VALIDATION.md) for the evidence boundaries.
+Screenshots show tracks/scenery rendering and the service feature enabled; These observations do not establish completed construction deliveries, freight generation, refueling, save/reload or both-runtime gameplay. The revised entrance and normalized loader records have offline validation only. See [Validation](VALIDATION.md) for the evidence boundaries.
